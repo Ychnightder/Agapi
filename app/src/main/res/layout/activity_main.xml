@@ -69,7 +69,7 @@
                 app:srcCompat="@drawable/home"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="home"
-                >
+               />
             <TextView
                 android:id="@+id/textViewAccueil"
                 android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                 app:srcCompat="@drawable/charity"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="association"
-                >
+                >     </ImageButton>
 
 
             <TextView
@@ -128,7 +128,7 @@
                 app:srcCompat="@drawable/profil"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="profil"
-                >
+                > </ImageButton>
             <TextView
                 android:id="@+id/textViewProfil"
                 android:layout_width="match_parent"
