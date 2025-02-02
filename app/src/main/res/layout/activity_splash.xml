@@ -12,27 +12,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="0dp"
         android:layout_weight="9"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="200dp"
             android:layout_height="200dp"
+            android:contentDescription="@string/logo"
             app:srcCompat="@drawable/agapi_logo" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/slogan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/poppins"
-            android:text="Votre générosité, leur avenir."
+            android:text="@string/slogan"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -42,7 +44,7 @@
         android:layout_height="54dp"
         android:fontFamily="@font/poppins"
         android:gravity="center"
-        android:text="Developed by Random studio"
+        android:text="@string/developed_by_random_studio"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="12sp"
