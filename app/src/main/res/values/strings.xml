@@ -4,4 +4,13 @@
     <string name="logo">logo</string>
     <string name="slogan">Votre générosité, leur avenir.</string>
     <string name="agapi">AGAPI</string>
+
+    <string-array name="nom_association">
+        <item> Asso1</item>
+        <item> Asso2</item>
+        <item> Asso3</item>
+        <item> Asso4</item>
+        <item> Asso5</item>
+        <item> Asso6</item>
+    </string-array>
 </resources>

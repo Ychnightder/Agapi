@@ -1,56 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main"
-    android:fillViewport="true"
-    >
-<androidx.constraintlayout.widget.ConstraintLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-        tools:context=".MainActivity"
-    >
-    <TextView
-        android:id="@+id/title"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/agapi"
-        android:textSize="28sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:background="@drawable/gradient_bg"
-        android:textColor="@color/white"
-        android:fontFamily="@font/poppins_medium"
-        />
 
-    <!-- Section des associations -->
-    <TextView
-        android:id="@+id/section_association"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Association recommandée"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        tools:layout_editor_absoluteX="16dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".MainActivity">
+
+            <TextView
+                android:id="@+id/section_association"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Association recommandée"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/section_association"
+                app:layout_constraintVertical_bias="0.0"
+            />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/gradient_bg"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:text="@string/agapi"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000"
+                android:layout_marginVertical="8dp"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView"
+                />
 
 
-<!--    &lt;!&ndash; Menu bas &ndash;&gt;-->
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="Button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+            <TextView
+                android:id="@+id/textViewTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="Test"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginTop="1000dp"
+                 app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--    </ImageButton>-->
+
+
+        <!--    <ImageButton-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:textSize="14sp"-->
+        <!--        android:fontFamily="@font/poppins_extrabold"-->
+        <!--        android:background="@color/transparent"-->
+
+
+        <!--        />-->
+
+        <!--    <ImageButton-->
+        <!--        android:layout_height="match_parent"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:textSize="14sp"-->
+        <!--        android:fontFamily="@font/poppins_extrabold"-->
+        <!--        android:background="@color/transparent"-->
+        <!--        />-->
+
+
+
+
+    </ScrollView>
+
+
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:orientation="horizontal"
         android:background="@drawable/rounded_top"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
 
         >
@@ -60,28 +140,26 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textSize="14sp"
-                app:srcCompat="@drawable/home"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="home"
-               />
+                android:textSize="14sp"
+                app:srcCompat="@drawable/home" />
+
             <TextView
                 android:id="@+id/textViewAccueil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Accueil"
-                android:textColor="@color/white"
                 android:fontFamily="@font/poppins_extrabold"
-                android:textSize="14sp"
-              />
+                android:text="Accueil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
-
 
 
         <LinearLayout
@@ -89,28 +167,27 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textSize="14sp"
-                app:srcCompat="@drawable/charity"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="association"
-                >     </ImageButton>
+                android:textSize="14sp"
+                app:srcCompat="@drawable/charity">
+            </ImageButton>
 
 
             <TextView
                 android:id="@+id/textViewAssociations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Associations"
-                android:textColor="@color/white"
                 android:fontFamily="@font/poppins_extrabold"
-                android:textSize="14sp"
-                />
+                android:text="Associations"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
 
 
@@ -119,58 +196,27 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
+
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:textSize="14sp"
-                app:srcCompat="@drawable/profil"
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="profil"
-                > </ImageButton>
+                android:textSize="14sp"
+                app:srcCompat="@drawable/profil">
+            </ImageButton>
+
             <TextView
                 android:id="@+id/textViewProfil"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:text="Profil"
-                android:textColor="@color/white"
                 android:fontFamily="@font/poppins_extrabold"
-                android:textSize="14sp"
-                />
+                android:text="Profil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
         </LinearLayout>
-
-
     </LinearLayout>
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <!--    </ImageButton>-->
-
-
-<!--    <ImageButton-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:textSize="14sp"-->
-<!--        android:fontFamily="@font/poppins_extrabold"-->
-<!--        android:background="@color/transparent"-->
-
-
-<!--        />-->
-
-<!--    <ImageButton-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:textSize="14sp"-->
-<!--        android:fontFamily="@font/poppins_extrabold"-->
-<!--        android:background="@color/transparent"-->
-<!--        />-->
-
-
-
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
