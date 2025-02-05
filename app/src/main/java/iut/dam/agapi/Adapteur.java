@@ -25,7 +25,7 @@ public class Adapteur extends RecyclerView.Adapter<Adapteur.MyViewHolder> {
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inlater = LayoutInflater.from(context);
         View view = inlater.inflate(R.layout.buttonimagetext, parent, false);
-        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)); // 确保 item 不占满
+        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new MyViewHolder(view);
     }
 

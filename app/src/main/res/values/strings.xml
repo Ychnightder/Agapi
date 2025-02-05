@@ -13,4 +13,13 @@
         <item> Asso5</item>
         <item> Asso6</item>
     </string-array>
+
+    <string-array name="Description_association">
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+    </string-array>
 </resources>
