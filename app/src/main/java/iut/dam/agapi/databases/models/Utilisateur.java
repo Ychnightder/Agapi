@@ -7,9 +7,14 @@ public class Utilisateur {
     private String prenom;
     private String email;
     private String motDePasse;
-
     // Constructeurs
-    public Utilisateur() {}
+
+    public Utilisateur(String nom, String prenom, String email, String motDePasse) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.motDePasse = motDePasse;
+    }
     public Utilisateur(int id, String nom, String prenom, String email, String motDePasse) {
         this.id = id;
         this.nom = nom;

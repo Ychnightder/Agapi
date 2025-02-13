@@ -26,6 +26,6 @@ public class DatabaseManager extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + ManagerUtilisateur.getTableName());
-
+        onCreate(db);
     }
 }
