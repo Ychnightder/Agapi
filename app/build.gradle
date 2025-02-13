@@ -53,5 +53,7 @@ dependencies {
     androidTestImplementation libs.espresso.core
     implementation libs.flexbox
     androidTestImplementation libs.junit.jupiter
+    androidTestImplementation libs.monitor
+    androidTestImplementation libs.monitor
 }
 

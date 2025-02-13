@@ -37,6 +37,8 @@ public class ManagerUtilisateur {
     public void close() {
         dbManager.close();
     }
+
+
     public void addUtilisateur(Utilisateur utilisateur) {
         SQLiteDatabase db = dbManager.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -113,12 +115,12 @@ public class ManagerUtilisateur {
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, COLUMN_NOM + " ASC");
         if (cursor.moveToFirst()) {
             do {
+                int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
                 String nom = cursor.getString(cursor.getColumnIndex(COLUMN_NOM));
                 String prenom = cursor.getString(cursor.getColumnIndex(COLUMN_PRENOM));
                 String email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL));
                 String motDePasse = cursor.getString(cursor.getColumnIndex(COLUMN_MOT_DE_PASSE));
-
-                utilisateurs.add(new Utilisateur(nom, prenom, email, motDePasse));
+                utilisateurs.add(new Utilisateur(id ,nom, prenom, email, motDePasse));
             } while (cursor.moveToNext());
         }
         cursor.close();
