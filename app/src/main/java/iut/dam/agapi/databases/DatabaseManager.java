@@ -3,8 +3,7 @@ package iut.dam.agapi.databases;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
-import androidx.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 import iut.dam.agapi.databases.managers.ManagerAssociation;
 import iut.dam.agapi.databases.managers.ManagerUtilisateur;

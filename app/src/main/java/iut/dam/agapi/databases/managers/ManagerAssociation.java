@@ -98,4 +98,7 @@ public class ManagerAssociation {
         db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
+
+
+
 }
