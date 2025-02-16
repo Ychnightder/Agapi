@@ -16,6 +16,10 @@ rulesVersion = "1.6.1"
 runner = "1.6.2"
 junitJupiter = "5.8.1"
 monitor = "1.7.1"
+annotation = "1.9.1"
+lifecycleLivedataKtx = "2.8.7"
+lifecycleViewmodelKtx = "2.8.7"
+coreVersion = "1.15.0"
 
 [libraries]
 espresso-core-v340 = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCoreVersion" }
@@ -34,6 +38,10 @@ rules-v140 = { module = "androidx.test:rules", version.ref = "rulesVersion" }
 runner = { module = "androidx.test:runner", version.ref = "runner" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
 monitor = { group = "androidx.test", name = "monitor", version.ref = "monitor" }
+annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "coreVersion" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

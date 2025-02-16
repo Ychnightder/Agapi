@@ -1,4 +1,4 @@
-package iut.dam.agapi.databases.models;
+package iut.dam.agapi.models;
 public class Association {
     private int id;
     private String nom;

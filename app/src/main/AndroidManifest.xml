@@ -13,8 +13,12 @@
         android:theme="@style/Theme.Agapi"
         tools:targetApi="31">
         <activity
-            android:name=".AssociationImageButton"
+            android:name=".ui.LoginActivity"
             android:exported="true" >
+        </activity>
+        <activity
+            android:name=".models.AssociationImageButton"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,13 +26,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.SplashActivity"
             android:exported="true">
-
         </activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
 
         </activity>

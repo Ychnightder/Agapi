@@ -1,4 +1,4 @@
-package iut.dam.agapi.databases.managers;
+package iut.dam.agapi.managers;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,8 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import iut.dam.agapi.databases.DatabaseManager;
-import iut.dam.agapi.databases.models.Association;
+import iut.dam.agapi.models.Association;
 
 public class ManagerAssociation {
     private Context context;

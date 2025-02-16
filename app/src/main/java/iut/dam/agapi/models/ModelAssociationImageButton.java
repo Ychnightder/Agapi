@@ -1,9 +1,8 @@
-package iut.dam.agapi;
+package iut.dam.agapi.models;
 
 public class ModelAssociationImageButton {
 
     int imageButton;
-
     String nomAsso;
 
 

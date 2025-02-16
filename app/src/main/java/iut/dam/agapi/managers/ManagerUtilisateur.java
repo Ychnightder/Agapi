@@ -1,14 +1,13 @@
-package iut.dam.agapi.databases.managers;
+package iut.dam.agapi.managers;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import iut.dam.agapi.databases.DatabaseManager;
-import iut.dam.agapi.databases.models.Utilisateur;
+import iut.dam.agapi.models.Utilisateur;
 public class ManagerUtilisateur {
     private Context context;
     public static String getTableName() {

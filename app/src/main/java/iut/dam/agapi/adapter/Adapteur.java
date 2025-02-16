@@ -1,4 +1,4 @@
-package iut.dam.agapi;
+package iut.dam.agapi.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import iut.dam.agapi.models.ModeleHorizontalscrollview;
+import iut.dam.agapi.R;
 
 public class Adapteur extends RecyclerView.Adapter<Adapteur.MyViewHolder> {
     Context context;

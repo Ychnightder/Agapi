@@ -17,7 +17,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import iut.dam.agapi.databases.models.Utilisateur;
+import iut.dam.agapi.managers.ManagerUtilisateur;
+import iut.dam.agapi.models.Utilisateur;
 
 @RunWith(AndroidJUnit4.class)
 public class ManagerUtilisateurTest {

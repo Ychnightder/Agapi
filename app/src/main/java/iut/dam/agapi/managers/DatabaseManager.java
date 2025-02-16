@@ -1,12 +1,9 @@
-package iut.dam.agapi.databases;
+package iut.dam.agapi.managers;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import org.jetbrains.annotations.Nullable;
-
-import iut.dam.agapi.databases.managers.ManagerAssociation;
-import iut.dam.agapi.databases.managers.ManagerUtilisateur;
 
 public class DatabaseManager extends SQLiteOpenHelper {
 

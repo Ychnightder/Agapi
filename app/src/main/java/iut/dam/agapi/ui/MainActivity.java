@@ -1,21 +1,22 @@
-package iut.dam.agapi;
+package iut.dam.agapi.ui;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import iut.dam.agapi.adapter.Adapteur;
+import iut.dam.agapi.adapter.AdapteurDescriptionAsso;
+import iut.dam.agapi.models.ModeleDescriptionAssociation;
+import iut.dam.agapi.models.ModeleHorizontalscrollview;
+import iut.dam.agapi.R;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews = new ArrayList<>();

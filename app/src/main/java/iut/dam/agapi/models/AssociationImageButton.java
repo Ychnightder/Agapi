@@ -1,4 +1,4 @@
-package iut.dam.agapi;
+package iut.dam.agapi.models;
 
 import android.os.Bundle;
 
@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import iut.dam.agapi.R;
+import iut.dam.agapi.adapter.AdapteurAssociationImageButton;
 
 public class AssociationImageButton extends AppCompatActivity {
     ArrayList<ModelAssociationImageButton> modelAssociationImageButtons = new ArrayList<>();

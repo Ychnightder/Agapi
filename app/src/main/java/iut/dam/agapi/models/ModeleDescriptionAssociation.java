@@ -1,4 +1,4 @@
-package iut.dam.agapi;
+package iut.dam.agapi.models;
 
 public class ModeleDescriptionAssociation {
     String nomAssociation;
