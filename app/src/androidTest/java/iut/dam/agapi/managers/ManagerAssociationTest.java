@@ -1,4 +1,4 @@
-package iut.dam.agapi.databases.managers;
+package iut.dam.agapi.managers;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import iut.dam.agapi.managers.ManagerAssociation;
 import iut.dam.agapi.models.Association;
 
 @RunWith(AndroidJUnit4.class)

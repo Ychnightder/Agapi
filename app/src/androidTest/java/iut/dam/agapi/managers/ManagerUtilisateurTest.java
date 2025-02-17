@@ -1,4 +1,4 @@
-package iut.dam.agapi.databases.managers;
+package iut.dam.agapi.managers;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -17,7 +17,6 @@ import android.content.Context;
 
 import java.util.List;
 
-import iut.dam.agapi.managers.ManagerUtilisateur;
 import iut.dam.agapi.models.Utilisateur;
 
 @RunWith(AndroidJUnit4.class)

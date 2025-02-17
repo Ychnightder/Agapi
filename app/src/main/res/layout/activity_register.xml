@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.LoginActivity"
-    >
+    tools:context=".ui.RegisterActivity">
 
     <!--Header-->
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,9 +24,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@id/linearLayoutConnexion"
+            android:background="@drawable/gradient_bg"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintWidth_percent="0.5"
+
             tools:layout_editor_absoluteY="0dp">
 
             <Button
@@ -38,7 +38,6 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins"
                 android:text="Inscription"
-                android:textColor="@color/black"
                 android:textSize="24sp" />
         </LinearLayout>
 
@@ -46,7 +45,6 @@
             android:id="@+id/linearLayoutConnexion"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_bg"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/linearLayoutInscription"
@@ -59,24 +57,28 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/poppins"
                 android:text="Connexion"
+                android:textColor="@color/black"
                 android:textSize="24sp" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--fin Header-->
-     <!--main-->
 
+
+    <!--main-->
     <!--fin main-->
+
+
+
     <!--    footer-->
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="88dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHeader">
 
@@ -146,7 +148,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Mot de passe" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -189,6 +190,39 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:id="@+id/textViewfooter"
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/white"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/arrow_left"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:fontFamily="@font/poppins"
+            android:text="Retour" />
+
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -196,7 +230,7 @@
         android:layout_marginBottom="4dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/textViewfooter"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         app:layout_constraintVertical_bias="0.508"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
@@ -213,8 +247,8 @@
 
         <LinearLayout
             android:layout_width="300dp"
-            android:layout_gravity="center"
             android:layout_height="1dp"
+            android:layout_gravity="center"
             android:background="@color/black"
             tools:ignore="MissingConstraints">
 
@@ -224,23 +258,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center">
+
             <ImageView
-                android:layout_marginEnd="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/googlepng"
-                />
+                android:layout_marginEnd="15dp"
+                app:srcCompat="@drawable/googlepng" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Se connecter avec google"
-                android:textAllCaps="true"
                 android:fontFamily="@font/poppins_medium"
+                android:text="Se connecter avec google"
                 android:textAlignment="center"
+                android:textAllCaps="true"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                >
+                android:textStyle="bold">
 
             </TextView>
         </LinearLayout>
@@ -248,42 +281,5 @@
     </LinearLayout>
 
 
-    <LinearLayout
-            android:id="@+id/textViewfooter"
-            android:layout_width="match_parent"
-            android:layout_height="78dp"
-            android:orientation="horizontal"
-            android:background="@drawable/gradient_bg"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/white"
-            android:gravity="center"
-            >
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/arrow_left"
-            android:layout_marginRight="10dp"
-            />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:fontFamily="@font/poppins"
-                android:text="Retour" />
-
-
-    </LinearLayout>
-
-
-
     <!--    fin footer-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>
