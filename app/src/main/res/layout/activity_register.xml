@@ -8,278 +8,214 @@
     android:background="@color/white"
     tools:context=".ui.RegisterActivity">
 
-    <!--Header-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutHeader"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+
+    <include layout="@layout/headerinscription"
+        android:id="@+id/header"/>
+
+    <ImageView
+        android:id="@+id/imageViewEmail"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/mail"
+        />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="270dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/asterisque"
+        android:id="@+id/asterisqueemail"
+        />
 
-
-        <LinearLayout
-            android:id="@+id/linearLayoutInscription"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@id/linearLayoutConnexion"
-            android:background="@drawable/gradient_bg"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintWidth_percent="0.5"
-
-            tools:layout_editor_absoluteY="0dp">
-
-            <Button
-                android:id="@+id/buttonInscription"
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppins"
-                android:text="Inscription"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutConnexion"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/linearLayoutInscription"
-            app:layout_constraintWidth_percent="0.5">
-
-            <Button
-                android:id="@+id/buttonConnexion"
-                style="@style/ButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/poppins"
-                android:text="Connexion"
-                android:textColor="@color/black"
-                android:textSize="24sp" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--fin Header-->
-
-
-    <!--main-->
-    <!--fin main-->
-
-
-
-    <!--    footer-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="88dp"
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
+        app:layout_constraintTop_toTopOf="@id/imageViewEmail"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/imageViewTelephone"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="@id/imageViewEmail"
+        app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
+        app:srcCompat="@drawable/telephone_1"
+        app:layout_constraintEnd_toEndOf="@id/imageViewEmail"
+
+        />
+
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+
+        android:hint="N° de Telephone"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTelephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        app:layout_constraintTop_toTopOf="@id/imageViewTelephone"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/imageViewlocked_computer"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="@id/imageViewTelephone"
+        app:layout_constraintTop_toBottomOf="@id/imageViewTelephone"
+        app:layout_constraintEnd_toEndOf="@id/imageViewTelephone"
+        app:srcCompat="@drawable/locked_computer_1" />
+
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="270dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewlocked_computer"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutHeader">
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/asterisque" />
 
-        <LinearLayout
-            android:id="@+id/EmailLayout"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginTop="52dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/imageViewEmail"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="16dp"
-                    android:contentDescription="TODO"
-                    app:srcCompat="@drawable/mail" />
+    <EditText
+        android:id="@+id/editTextMdp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Mot de passe"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewlocked_computer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        app:layout_constraintTop_toTopOf="@id/imageViewlocked_computer" />
 
 
-                <ImageView
-                    android:id="@+id/imageViewTelephone"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginEnd="16dp"
-                    android:contentDescription="TODO"
-                    app:srcCompat="@drawable/telephone_1" />
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_asso"
+        app:layout_constraintBottom_toBottomOf="@id/buttonInscription"
+        app:layout_constraintEnd_toEndOf="@id/buttonInscription"
+        app:layout_constraintStart_toStartOf="@id/buttonInscription"
+        app:layout_constraintTop_toTopOf="@id/buttonInscription"
+        >
+    </View>
 
-            </LinearLayout>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Email/N° de Telephone" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginTop="84dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/EmailLayout"
-            tools:layout_editor_absoluteX="0dp">
-
-            <LinearLayout
-                android:layout_width="108dp"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="center"
-                    app:srcCompat="@drawable/locked_computer_1" />
-            </LinearLayout>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Mot de passe" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-            <TextView
-                android:layout_width="178dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:fontFamily="@font/poppins"
-                android:text="Mot de passe oublié ?"
-                android:textAlignment="textEnd" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="120dp"
-            android:layout_height="53dp"
-            android:layout_marginTop="52dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-            tools:ignore="MissingConstraints">
-
-            <Button
-                android:id="@+id/buttonConnexionMain"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Connexion" />
-        </LinearLayout>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/textViewfooter"
-        android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:orientation="horizontal"
-        android:background="@drawable/gradient_bg"
+    <Button
+        android:id="@+id/buttonInscription"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:background="#00FFFFFF"
+        android:text="Creer un compte"
+        android:textSize="18dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+
+    <View
+        android:id="@+id/zonefooter"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_weight="0.5"
+        android:background="@drawable/gradient_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+    </View>
+
+
+
+
+
+    <TextView
+        android:id="@+id/ou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="ou"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/buttonInscription"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <View
+        android:id="@+id/barrie"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_margin="20dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ou">
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ou"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
         >
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/icon_google"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/arrow_left"
-            android:layout_marginRight="10dp"
+
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/googlepng"
             />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textconnectionGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Se connecter avec google"
             android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:fontFamily="@font/poppins"
-            android:text="Retour" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginBottom="4dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/textViewfooter"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="0.508"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
-
-        <TextView
-            android:id="@+id/ou"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
-            android:text="ou"
-            android:textAlignment="center"
+            android:textAllCaps="true"
             android:textSize="14sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            >
 
-        <LinearLayout
-            android:layout_width="300dp"
-            android:layout_height="1dp"
-            android:layout_gravity="center"
-            android:background="@color/black"
-            tools:ignore="MissingConstraints">
+        </TextView>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                app:srcCompat="@drawable/googlepng" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Se connecter avec google"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textSize="14sp"
-                android:textStyle="bold">
-
-            </TextView>
-        </LinearLayout>
 
     </LinearLayout>
 
-
-    <!--    fin footer-->
+    <include layout="@layout/footerconnectioninscription" />
+    <!--    &lt;!&ndash;    fin footer&ndash;&gt;-->
 </androidx.constraintlayout.widget.ConstraintLayout>
