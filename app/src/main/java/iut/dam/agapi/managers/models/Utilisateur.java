@@ -1,4 +1,4 @@
-package iut.dam.agapi.models;
+package iut.dam.agapi.managers.models;
 
 
 public class Utilisateur {

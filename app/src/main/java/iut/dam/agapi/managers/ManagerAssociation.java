@@ -1,5 +1,4 @@
 package iut.dam.agapi.managers;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -7,10 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import iut.dam.agapi.models.Association;
+import iut.dam.agapi.managers.models.Association;
+
 
 public class ManagerAssociation {
     private Context context;
+    private DatabaseManager dbManager;
+
     private static final String TABLE_NAME = "Association";
     private static final String COLUMN_ID = "id_association";
     private static final String COLUMN_NOM = "nom_association_";
@@ -26,20 +28,17 @@ public class ManagerAssociation {
             COLUMN_QRCODE + " TEXT)";
 
 
-    private DatabaseManager dbManager;
-
     public ManagerAssociation(Context context) {
         this.context = context;
         dbManager = new DatabaseManager(this.context);
     }
+
     public static String getTableName() {
         return TABLE_NAME;
     }
-
     public  void close() {
         dbManager.close();
     }
-
     public void addAssociation(Association association) {
         SQLiteDatabase db = dbManager.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -51,7 +50,6 @@ public class ManagerAssociation {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
-
     public Association getAssociationById(int id) {
         SQLiteDatabase db = dbManager.getReadableDatabase();
         String[] columns = {COLUMN_ID, COLUMN_NOM, COLUMN_DESCRIPTION, COLUMN_LOGO, COLUMN_QRCODE};
@@ -71,7 +69,6 @@ public class ManagerAssociation {
         db.close();
         return association;
     }
-
     public List<Association> getAllAssociations() {
         List<Association> associations = new ArrayList<>();
         SQLiteDatabase db = dbManager.getReadableDatabase();
@@ -91,13 +88,10 @@ public class ManagerAssociation {
         db.close();
         return associations;
     }
-
     public void deleteAssociation(int id) {
         SQLiteDatabase db = dbManager.getWritableDatabase();
         db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
         db.close();
     }
-
-
 
 }

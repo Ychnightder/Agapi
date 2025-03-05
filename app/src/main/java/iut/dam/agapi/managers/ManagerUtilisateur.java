@@ -7,7 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import iut.dam.agapi.models.Utilisateur;
+import iut.dam.agapi.managers.models.Utilisateur;
+
 public class ManagerUtilisateur {
     private Context context;
     public static String getTableName() {
@@ -28,11 +29,14 @@ public class ManagerUtilisateur {
             COLUMN_MOT_DE_PASSE + " TEXT NOT NULL)";
 
     public static final String DROP_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
     private DatabaseManager dbManager;
+
     public ManagerUtilisateur(Context context) {
         this.context = context;
         dbManager = new DatabaseManager(this.context);
     }
+
     public void close() {
         dbManager.close();
     }
