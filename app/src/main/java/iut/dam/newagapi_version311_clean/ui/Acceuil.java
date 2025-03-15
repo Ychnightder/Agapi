@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewStub;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -24,11 +25,13 @@ import iut.dam.newagapi_version311_clean.R;
 
 public class Acceuil extends AppCompatActivity {
 
+    //partie test
     int[] ImageAssociation = {
             R.drawable.profil,R.drawable.profil,
             R.drawable.profil,R.drawable.profil,
             R.drawable.profil,R.drawable.profil
     };
+    //fin de la partie test
     ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews = new ArrayList<>();
     ArrayList<ModeleVerticalscrollview> modeleverticalscrollviews = new ArrayList<>();
     RecyclerView recyclerViewHorizontal, recyclerViewVertical;
@@ -36,7 +39,10 @@ public class Acceuil extends AppCompatActivity {
     AdapteurVertical adapteurVertical;
     ViewStub stub;
     ConstraintLayout rootLayout;
-
+    ImageButton buttonProfil, buttonAcceuil, buttonAsso;
+    TextView textViewProfil, textViewAsso, textViewAcceuil;
+    Button buttonPourvous, buttonSuivies;
+    View viewPourvous, viewSuivies;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,26 +76,40 @@ public class Acceuil extends AppCompatActivity {
 
         if (connecter && stub.getParent() != null) {
             View inflatedView = stub.inflate();
-
+            buttonPourvous = inflatedView.findViewById(R.id.buttonPourVous);
+            buttonSuivies = inflatedView.findViewById(R.id.buttonSuivies);
+            viewPourvous =  inflatedView.findViewById(R.id.barButton_Pourvous);
+            viewSuivies = inflatedView.findViewById(R.id.barButton_Suivis);
             ConstraintSet constraintSet = new ConstraintSet();
             constraintSet.clone(rootLayout);
             constraintSet.connect(
                     R.id.section_association,
                     ConstraintSet.TOP,
                     R.id.buttonText,
-                    ConstraintSet.BOTTOM,
-                    16
+                    ConstraintSet.BOTTOM
             );
             constraintSet.applyTo(rootLayout);
+
+            buttonPourvous.setOnClickListener(v -> {
+                viewPourvous.setVisibility(View.VISIBLE);
+                viewSuivies.setVisibility(View.GONE);
+            });
+
+            buttonSuivies.setOnClickListener(v -> {
+                viewPourvous.setVisibility(View.GONE);
+                viewSuivies.setVisibility(View.VISIBLE);
+            });
         }
 
 
-        ImageButton buttonProfil = findViewById(R.id.buttonProfil);
-        ImageButton buttonAcceuil = findViewById(R.id.buttonAcceuil);
-        ImageButton buttonAsso = findViewById(R.id.buttonAsso);
-        TextView textViewProfil = findViewById(R.id.textViewProfil);
-        TextView textViewAsso = findViewById(R.id.textViewAssociations);
-        TextView textViewAcceuil = findViewById(R.id.textViewAccueil);
+         buttonProfil = findViewById(R.id.buttonProfil);
+         buttonAcceuil = findViewById(R.id.buttonAcceuil);
+         buttonAsso = findViewById(R.id.buttonAsso);
+         textViewProfil = findViewById(R.id.textViewProfil);
+         textViewAsso = findViewById(R.id.textViewAssociations);
+         textViewAcceuil = findViewById(R.id.textViewAccueil);
+
+
 
 
         View.OnClickListener buttonClickListener = v -> {
@@ -106,6 +126,12 @@ public class Acceuil extends AppCompatActivity {
                 changeCouleurOnclick(textViewAcceuil, buttonAcceuil);
             } else if (v.getId() == R.id.buttonAsso) {
                 changeCouleurOnclick(textViewAsso, buttonAsso);
+            } else if (v.getId() == R.id.buttonPourVous) {
+                viewSuivies.setVisibility(View.GONE);
+                viewPourvous.setVisibility(View.VISIBLE);
+            } else if (v.getId() == R.id.buttonSuivies) {
+                viewSuivies.setVisibility(View.VISIBLE);
+                viewPourvous.setVisibility(View.GONE);
             }
         };
 

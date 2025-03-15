@@ -1,30 +1,54 @@
-<!-- layout_login_buttons.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:id="@+id/buttonText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
-    android:id="@+id/buttonText">
+    android:orientation="horizontal"
+    >
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:backgroundTint="#00FFFFFF"
-        android:text="Pour vous"
-        android:textColor="@color/black"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        />
+        <Button
+            android:id="@+id/buttonPourVous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:text="Pour vous"
+            android:textColor="@color/black"/>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        <View
+            android:id="@+id/barButton_Pourvous"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/bar_button"
+            android:visibility="visible"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:backgroundTint="#00FFFFFF"
-        android:text="Suivi(e)s"
-        android:textColor="@color/black"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        />
+        <Button
+            android:id="@+id/buttonSuivies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            android:text="Suivi(e)s"
+            android:textColor="@color/black"/>
+
+        <View
+            android:id="@+id/barButton_Suivis"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="@color/bar_button"
+            android:visibility="invisible"/>
+    </LinearLayout>
 </LinearLayout>

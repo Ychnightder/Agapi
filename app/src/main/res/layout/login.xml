@@ -2,16 +2,222 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.Register">
+
+    <View
+        android:id="@+id/viewLeft"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/couleur_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/titleInscription"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Inscription"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonConnexion"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+
+    <Button
+        android:id="@+id/buttonConnexion"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Connexion"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/titleInscription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imageViewEmail"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/icon_mail"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/imageViewTelephone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewEmail"
+        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
+        app:layout_constraintTop_toTopOf="@id/imageViewEmail"
+        app:srcCompat="@mipmap/icon_tel"
+
+        />
+
+
+    <EditText
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Email/N° de Telephone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewTelephone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        app:layout_constraintTop_toTopOf="@id/imageViewTelephone"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/imageViewlocked_computer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
+        app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
+        app:srcCompat="@mipmap/icon_verrou" />
+
+    <EditText
+        android:id="@+id/editTextMdp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:hint="Mot de passe"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewlocked_computer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        app:layout_constraintTop_toTopOf="@id/imageViewlocked_computer" />
+
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/couleur_gradient"
+        app:layout_constraintBottom_toBottomOf="@id/buttonInscription"
+        app:layout_constraintEnd_toEndOf="@id/buttonInscription"
+        app:layout_constraintStart_toStartOf="@id/buttonInscription"
+        app:layout_constraintTop_toTopOf="@id/buttonInscription">
+
+    </View>
+
+    <Button
+        android:id="@+id/buttonInscription"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:background="#00FFFFFF"
+        android:text="Connexion"
+        android:textColor="@color/white"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="Mot de passe oublié ?"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextMdp" />
+
+
+    <TextView
+        android:id="@+id/ou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="ou"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonInscription" />
+
+    <View
+        android:id="@+id/barrie"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_margin="20dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ou">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ou">
+
+        <ImageView
+            android:id="@+id/icon_google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@mipmap/icon_google" />
+
+        <TextView
+            android:id="@+id/textconnectionGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Se connecter avec google"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/footerauthentification" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@
                 android:layout="@layout/acceuil_2buttons"
                 android:inflatedId="@+id/buttonText"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="95dp"
+                android:layout_marginTop="92dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="126dp"
+                android:layout_marginTop="140dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/Message_PageAcceuil"
                 android:textColor="@color/black"
