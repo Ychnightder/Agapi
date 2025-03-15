@@ -16,15 +16,25 @@
         android:layout_marginBottom="81dp"
 
         >
-
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             >
-            <include layout="@layout/header_acceuil"/>
+
+            <include layout="@layout/header_acceuil" android:id="@+id/header"/>
+
+            <ViewStub
+                android:id="@+id/login_buttons_stub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/acceuil_2buttons"
+                android:inflatedId="@+id/buttonText"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="95dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 
             <TextView
@@ -32,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="116dp"
+                android:layout_marginTop="126dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/Message_PageAcceuil"
                 android:textColor="@color/black"
@@ -40,7 +50,6 @@
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
  />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -55,8 +64,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/section_association"
  />
 
-
-
             <View
                 android:id="@+id/view"
                 android:layout_width="match_parent"
@@ -64,8 +71,6 @@
                 android:layout_marginVertical="8dp"
                 android:background="#000000"
                 app:layout_constraintTop_toBottomOf="@id/recyclerViewHorizontal" />
-
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewVertical"
@@ -75,12 +80,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/view" />
 
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     </androidx.core.widget.NestedScrollView>
-    <include layout="@layout/bottom_nav" />
+
+    <include layout="@layout/bottom_nav" android:id="@+id/footer"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

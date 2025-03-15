@@ -1,12 +1,16 @@
 package iut.dam.newagapi_version311_clean.ui;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewStub;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,6 +34,8 @@ public class Acceuil extends AppCompatActivity {
     RecyclerView recyclerViewHorizontal, recyclerViewVertical;
     AdapteurHorizontal adapteurHorizontal;
     AdapteurVertical adapteurVertical;
+    ViewStub stub;
+    ConstraintLayout rootLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,32 @@ public class Acceuil extends AppCompatActivity {
         recyclerViewVertical.setNestedScrollingEnabled(false);
 
         setrecycleviews();
+
+    }
+    @Override
+    protected void onResume() {
+        stub = findViewById(R.id.login_buttons_stub);
+        rootLayout = findViewById(R.id.main);
+        super.onResume();
+        SharedPreferences preferences = getSharedPreferences("Login", MODE_PRIVATE);
+        boolean connecter = preferences.getBoolean("Connecter", false);
+
+
+        if (connecter && stub.getParent() != null) {
+            View inflatedView = stub.inflate();
+
+            ConstraintSet constraintSet = new ConstraintSet();
+            constraintSet.clone(rootLayout);
+            constraintSet.connect(
+                    R.id.section_association,
+                    ConstraintSet.TOP,
+                    R.id.buttonText,
+                    ConstraintSet.BOTTOM,
+                    16
+            );
+            constraintSet.applyTo(rootLayout);
+        }
+
 
         ImageButton buttonProfil = findViewById(R.id.buttonProfil);
         ImageButton buttonAcceuil = findViewById(R.id.buttonAcceuil);
