@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AGAPI</string>
+    <string name="slogan">Votre générosité, leur avenir.</string>
+    <string name="devs">Developed by Random studio</string>
+    <string name="Message_PageAcceuil">Association recommandée</string>
+
+<!--partie test -->
+    <string-array name="nom_association">
+        <item> Asso1</item>
+        <item> Asso2</item>
+        <item> Asso3</item>
+        <item> Asso4</item>
+        <item> Asso5</item>
+        <item> Asso6</item>
+    </string-array>
+
+    <string-array name="Description_association">
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+        <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
+    </string-array>
+    <!-- fin de la partie test -->
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/background_menu_bottom_3buttons"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/buttonAcceuil"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="home"
+                android:textSize="14sp"
+                app:srcCompat="@drawable/home" />
+
+            <TextView
+                android:id="@+id/textViewAccueil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="Accueil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/buttonAsso"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="association"
+                android:textSize="14sp"
+                app:srcCompat="@drawable/charity">
+
+            </ImageButton>
+
+
+            <TextView
+                android:id="@+id/textViewAssociations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="Associations"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/buttonProfil"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="profil"
+                android:textSize="14sp"
+                app:srcCompat="@drawable/profil">
+            </ImageButton>
+            <TextView
+                android:id="@+id/textViewProfil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_extrabold"
+                android:text="Profil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
