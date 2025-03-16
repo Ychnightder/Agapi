@@ -1,17 +1,22 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/buttonText"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
-    android:orientation="horizontal"
-    >
+    android:layout_marginTop="20dp">
+
 
     <LinearLayout
+        android:id="@+id/sectionPourVous"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sectionSuivies"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
 
         <Button
             android:id="@+id/buttonPourVous"
@@ -19,22 +24,27 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             android:text="Pour vous"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <View
             android:id="@+id/barButton_Pourvous"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@color/bar_button"
-            android:visibility="visible"/>
+            android:visibility="visible" />
     </LinearLayout>
 
+
     <LinearLayout
+        android:id="@+id/sectionSuivies"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@id/sectionPourVous"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5">
 
         <Button
             android:id="@+id/buttonSuivies"
@@ -42,13 +52,14 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             android:text="Suivi(e)s"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
         <View
             android:id="@+id/barButton_Suivis"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             android:background="@color/bar_button"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
     </LinearLayout>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

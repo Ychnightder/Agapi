@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ui.Register">
+    <!-- ici c la partie header-->
 
     <View
         android:id="@+id/viewLeft"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:background="@drawable/couleur_gradient"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.5" />
 
@@ -24,7 +25,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#00FFFFFF"
         android:text="Inscription"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/titlebuttonConnexion"
@@ -38,7 +39,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#00FFFFFF"
         android:text="Connection"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/titleInscription"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,96 +47,92 @@
         app:layout_constraintWidth_percent="0.5" />
 
 
-
-
+<!-- fin de la partie header-->
 
 
     <ImageView
         android:id="@+id/imageViewEmail"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="300dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imageViewTelephone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/icon_mail"
-        app:layout_constraintWidth_percent="0.20"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="40dp"
         android:scaleType="centerCrop"
 
+        app:layout_constraintBottom_toTopOf="@+id/imageVerrou"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        app:srcCompat="@mipmap/icon_mail" />
 
-
-
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageViewEmail"
+        app:layout_constraintWidth_percent="0.6"
         />
-
 
     <ImageView
         android:id="@+id/imageViewTelephone"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewEmail"
-        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdp"
-        app:layout_constraintTop_toTopOf="@id/imageViewEmail"
-        app:srcCompat="@mipmap/icon_tel"
-        app:layout_constraintWidth_percent="0.20"
+        android:layout_marginStart="25dp"
         android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayoutPartieGoogle"
+        app:layout_constraintStart_toStartOf="parent"
 
-
-        />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.40"
+        app:srcCompat="@mipmap/icon_tel" />
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Email/N° de Telephone"
-        android:textStyle="bold"
         android:gravity="center"
+        android:hint="N° de Telephone"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageViewTelephone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
-        app:layout_constraintWidth_percent="0.6"
 
 
-        />
+        app:layout_constraintWidth_percent="0.6" />
 
     <ImageView
         android:id="@+id/imageVerrou"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
-        app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdp"
-        app:layout_constraintWidth_percent="0.4"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="40dp"
         android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewTelephone"
+        app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@mipmap/icon_verrou" />
 
     <EditText
         android:id="@+id/editTextMdp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
         android:hint="Mot de passe"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/imageVerrou"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageVerrou"
-
         app:layout_constraintWidth_percent="0.6"
         />
 
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/viewButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/background_button"
@@ -150,9 +147,9 @@
         android:id="@+id/buttonConnection"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:background="#00FFFFFF"
-        android:text="Connexion"
+        android:text="S'inscrire"
         android:textColor="@color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -161,19 +158,6 @@
         app:layout_constraintTop_toTopOf="parent"
 
         />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:fontFamily="@font/poppins"
-        android:text="Mot de passe oublié ?"
-        android:textAlignment="textEnd"
-       android:textColor="@color/text_color"
-        app:layout_constraintBottom_toTopOf="@+id/view2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextMdp" />
-
 
     <TextView
         android:id="@+id/ou"
@@ -202,6 +186,7 @@
     </View>
 
     <LinearLayout
+        android:id="@+id/linearLayoutPartieGoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
@@ -214,8 +199,6 @@
             android:id="@+id/icon_google"
             android:layout_width="50dp"
             android:layout_height="50dp"
-
-
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@mipmap/icon_google" />
 
@@ -237,5 +220,7 @@
     </LinearLayout>
 
     <include layout="@layout/footerauthentification" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

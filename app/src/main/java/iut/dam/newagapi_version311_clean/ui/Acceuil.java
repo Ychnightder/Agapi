@@ -1,5 +1,6 @@
 package iut.dam.newagapi_version311_clean.ui;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -43,6 +44,9 @@ public class Acceuil extends AppCompatActivity {
     TextView textViewProfil, textViewAsso, textViewAcceuil;
     Button buttonPourvous, buttonSuivies;
     View viewPourvous, viewSuivies;
+
+    private final int couleurOnclick = Color.parseColor("#F2409D");
+    SharedPreferences preferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,23 +67,29 @@ public class Acceuil extends AppCompatActivity {
         recyclerViewVertical.setNestedScrollingEnabled(false);
 
         setrecycleviews();
+        preferences = getSharedPreferences("Login", MODE_PRIVATE);
+        preferences.edit().clear().apply();
 
     }
     @Override
     protected void onResume() {
-        stub = findViewById(R.id.login_buttons_stub);
-        rootLayout = findViewById(R.id.main);
         super.onResume();
-        SharedPreferences preferences = getSharedPreferences("Login", MODE_PRIVATE);
         boolean connecter = preferences.getBoolean("Connecter", false);
 
 
-        if (connecter && stub.getParent() != null) {
-            View inflatedView = stub.inflate();
-            buttonPourvous = inflatedView.findViewById(R.id.buttonPourVous);
-            buttonSuivies = inflatedView.findViewById(R.id.buttonSuivies);
-            viewPourvous =  inflatedView.findViewById(R.id.barButton_Pourvous);
-            viewSuivies = inflatedView.findViewById(R.id.barButton_Suivis);
+        View loginButtonsContainer = findViewById(R.id.login_buttons_container);
+        TextView sectionAssociation = findViewById(R.id.section_association);
+        ConstraintLayout rootLayout = findViewById(R.id.main);
+
+        if (connecter) {
+
+            loginButtonsContainer.setVisibility(View.VISIBLE);
+
+            buttonPourvous = findViewById(R.id.buttonPourVous);
+            buttonSuivies = findViewById(R.id.buttonSuivies);
+            viewPourvous = findViewById(R.id.barButton_Pourvous);
+            viewSuivies = findViewById(R.id.barButton_Suivis);
+
             ConstraintSet constraintSet = new ConstraintSet();
             constraintSet.clone(rootLayout);
             constraintSet.connect(
@@ -99,8 +109,22 @@ public class Acceuil extends AppCompatActivity {
                 viewPourvous.setVisibility(View.GONE);
                 viewSuivies.setVisibility(View.VISIBLE);
             });
-        }
 
+        }
+//        else if (deconnecter){
+//            loginButtonsContainer.setVisibility(View.GONE);
+//
+//            ConstraintSet constraintSet = new ConstraintSet();
+//            constraintSet.clone(rootLayout);
+//            constraintSet.connect(
+//                    R.id.section_association,
+//                    ConstraintSet.TOP,
+//                    R.id.header,
+//                    ConstraintSet.BOTTOM
+//            );
+//            constraintSet.applyTo(rootLayout);
+//        }
+//  methode future pour deconnecter
 
          buttonProfil = findViewById(R.id.buttonProfil);
          buttonAcceuil = findViewById(R.id.buttonAcceuil);
@@ -138,6 +162,8 @@ public class Acceuil extends AppCompatActivity {
         buttonProfil.setOnClickListener(buttonClickListener);
         buttonAcceuil.setOnClickListener(buttonClickListener);
         buttonAsso.setOnClickListener(buttonClickListener);
+        buttonAcceuil.setImageResource(R.drawable.bottomnav_homeonclick);
+        textViewAcceuil.setTextColor(couleurOnclick);
 
     }
     private void setrecycleviews() {
@@ -153,16 +179,17 @@ public class Acceuil extends AppCompatActivity {
     }
 
     private void changeCouleurOnclick(TextView textView, ImageButton imageButton) {
-        int couleurOnclick = Color.parseColor("#F2409D");
 
-        textView.setTextColor(couleurOnclick);
 
         if (imageButton.getId() == R.id.buttonProfil) {
-            imageButton.setImageResource(R.drawable.bottomnav_profilonclick);
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
         } else if (imageButton.getId() == R.id.buttonAcceuil) {
             imageButton.setImageResource(R.drawable.bottomnav_homeonclick);
+            textView.setTextColor(couleurOnclick);
         } else if (imageButton.getId() == R.id.buttonAsso) {
             imageButton.setImageResource(R.drawable.bottomnav_charityonclick);
+            textView.setTextColor(couleurOnclick);
         }
     }
 

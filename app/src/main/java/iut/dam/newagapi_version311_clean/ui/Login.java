@@ -1,7 +1,6 @@
 package iut.dam.newagapi_version311_clean.ui;
 
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
@@ -15,9 +14,10 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        loginButton = findViewById(R.id.buttonConnexion);
+        loginButton = findViewById(R.id.buttonConnection);
 
         loginButton.setOnClickListener(v -> {
             boolean loginSuccess = true;
@@ -26,10 +26,6 @@ public class Login extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("Login", MODE_PRIVATE);
                 prefs.edit().putBoolean("Connecter", true).apply();
 
-
-                Intent intent = new Intent(this, Acceuil.class);
-
-                startActivity(intent);
                 finish();
             } else {
 

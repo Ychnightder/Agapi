@@ -23,16 +23,16 @@
 
             <include layout="@layout/header_acceuil" android:id="@+id/header"/>
 
-            <ViewStub
-                android:id="@+id/login_buttons_stub"
-                android:layout_width="match_parent"
+            <include
+                android:id="@+id/login_buttons_container"
+                layout="@layout/acceuil_2buttons"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout="@layout/acceuil_2buttons"
-                android:inflatedId="@+id/buttonText"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="92dp"
+                app:layout_constraintTop_toBottomOf="@+id/header"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone" />
+
 
 
 
