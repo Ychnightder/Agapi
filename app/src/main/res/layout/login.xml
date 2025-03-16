@@ -236,6 +236,8 @@
 
     </LinearLayout>
 
-    <include layout="@layout/footerauthentification" />
+    <include layout="@layout/footerauthentification"
+        android:id="@+id/footerauthentification"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -78,8 +78,7 @@ public class Acceuil extends AppCompatActivity {
 
 
         View loginButtonsContainer = findViewById(R.id.login_buttons_container);
-        TextView sectionAssociation = findViewById(R.id.section_association);
-        ConstraintLayout rootLayout = findViewById(R.id.main);
+        rootLayout = findViewById(R.id.main);
 
         if (connecter) {
 

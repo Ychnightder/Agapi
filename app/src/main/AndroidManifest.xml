@@ -25,6 +25,7 @@
         <activity android:name=".ui.Acceuil">
         </activity>
         <activity android:name=".ui.Login"/>
+        <activity android:name=".ui.Register"/>
     </application>
 
 </manifest>
