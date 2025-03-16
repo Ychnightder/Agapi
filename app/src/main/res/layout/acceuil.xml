@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             >
 
-            <include layout="@layout/header_acceuil" android:id="@+id/header"/>
+            <include layout="@layout/acceuil_header" android:id="@+id/header"/>
 
             <include
                 android:id="@+id/login_buttons_container"

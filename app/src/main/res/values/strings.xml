@@ -4,7 +4,7 @@
     <string name="devs">Developed by Random studio</string>
     <string name="Message_PageAcceuil">Association recommandée</string>
 
-<!--partie test -->
+    <!--partie test -->
     <string-array name="nom_association">
         <item> Asso1</item>
         <item> Asso2</item>
@@ -22,5 +22,7 @@
         <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
         <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- fin de la partie test -->
 </resources>

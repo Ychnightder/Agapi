@@ -22,6 +22,7 @@ import Models.ModeleHorizontalscrollview;
 import Models.ModeleVerticalscrollview;
 import adapteurs.AdapteurHorizontal;
 import adapteurs.AdapteurVertical;
+import helpers.BottomNavControler;
 import iut.dam.newagapi_version311_clean.R;
 
 public class Acceuil extends AppCompatActivity {
@@ -66,9 +67,17 @@ public class Acceuil extends AppCompatActivity {
         recyclerViewHorizontal.setNestedScrollingEnabled(false);
         recyclerViewVertical.setNestedScrollingEnabled(false);
 
+        BottomNavControler.setupNavigation(this,R.id.buttonAcceuil);
+        buttonAcceuil = findViewById(R.id.buttonAcceuil);
+        textViewAcceuil = findViewById(R.id.textViewAccueil);
+        buttonAcceuil.setImageResource(R.drawable.bottomnav_homeonclick);
+        textViewAcceuil.setTextColor(couleurOnclick);
+
         setrecycleviews();
         preferences = getSharedPreferences("Login", MODE_PRIVATE);
         preferences.edit().clear().apply();
+
+
 
     }
     @Override
@@ -125,31 +134,10 @@ public class Acceuil extends AppCompatActivity {
 //        }
 //  methode future pour deconnecter
 
-         buttonProfil = findViewById(R.id.buttonProfil);
-         buttonAcceuil = findViewById(R.id.buttonAcceuil);
-         buttonAsso = findViewById(R.id.buttonAsso);
-         textViewProfil = findViewById(R.id.textViewProfil);
-         textViewAsso = findViewById(R.id.textViewAssociations);
-         textViewAcceuil = findViewById(R.id.textViewAccueil);
-
-
 
 
         View.OnClickListener buttonClickListener = v -> {
-            textViewProfil.setTextColor(Color.WHITE);
-            textViewAsso.setTextColor(Color.WHITE);
-            textViewAcceuil.setTextColor(Color.WHITE);
-
-            buttonProfil.setImageResource(R.drawable.profil);
-            buttonAcceuil.setImageResource(R.drawable.home);
-            buttonAsso.setImageResource(R.drawable.charity);
-            if (v.getId() == R.id.buttonProfil) {
-                changeCouleurOnclick(textViewProfil, buttonProfil);
-            } else if (v.getId() == R.id.buttonAcceuil) {
-                changeCouleurOnclick(textViewAcceuil, buttonAcceuil);
-            } else if (v.getId() == R.id.buttonAsso) {
-                changeCouleurOnclick(textViewAsso, buttonAsso);
-            } else if (v.getId() == R.id.buttonPourVous) {
+            if (v.getId() == R.id.buttonPourVous) {
                 viewSuivies.setVisibility(View.GONE);
                 viewPourvous.setVisibility(View.VISIBLE);
             } else if (v.getId() == R.id.buttonSuivies) {
@@ -158,11 +146,7 @@ public class Acceuil extends AppCompatActivity {
             }
         };
 
-        buttonProfil.setOnClickListener(buttonClickListener);
-        buttonAcceuil.setOnClickListener(buttonClickListener);
-        buttonAsso.setOnClickListener(buttonClickListener);
-        buttonAcceuil.setImageResource(R.drawable.bottomnav_homeonclick);
-        textViewAcceuil.setTextColor(couleurOnclick);
+
 
     }
     private void setrecycleviews() {
@@ -177,19 +161,5 @@ public class Acceuil extends AppCompatActivity {
         }
     }
 
-    private void changeCouleurOnclick(TextView textView, ImageButton imageButton) {
-
-
-        if (imageButton.getId() == R.id.buttonProfil) {
-            Intent intent = new Intent(this, Login.class);
-            startActivity(intent);
-        } else if (imageButton.getId() == R.id.buttonAcceuil) {
-            imageButton.setImageResource(R.drawable.bottomnav_homeonclick);
-            textView.setTextColor(couleurOnclick);
-        } else if (imageButton.getId() == R.id.buttonAsso) {
-            imageButton.setImageResource(R.drawable.bottomnav_charityonclick);
-            textView.setTextColor(couleurOnclick);
-        }
-    }
 
 }

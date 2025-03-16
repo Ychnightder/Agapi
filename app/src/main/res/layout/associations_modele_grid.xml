@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Asso 1 -->
+    <ImageButton
+        android:id="@+id/imageButtonAsso1"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        app:srcCompat="@drawable/profil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imageButtonAsso2"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <TextView
+        android:id="@+id/textViewAsso1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asso1"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/imageButtonAsso1"
+        app:layout_constraintStart_toStartOf="@id/imageButtonAsso1"
+        app:layout_constraintEnd_toEndOf="@id/imageButtonAsso1"/>
+
+
+    <!-- Asso 2 -->
+    <ImageButton
+        android:id="@+id/imageButtonAsso2"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        app:srcCompat="@drawable/profil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageButtonAsso1"
+        app:layout_constraintEnd_toStartOf="@id/imageButtonAsso3"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <TextView
+        android:id="@+id/textViewAsso2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asso2"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/imageButtonAsso2"
+        app:layout_constraintStart_toStartOf="@id/imageButtonAsso2"
+        app:layout_constraintEnd_toEndOf="@id/imageButtonAsso2"/>
+
+
+    <!-- Asso 3 -->
+    <ImageButton
+        android:id="@+id/imageButtonAsso3"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@null"
+        app:srcCompat="@drawable/profil"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageButtonAsso2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <TextView
+        android:id="@+id/textViewAsso3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Asso3"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/imageButtonAsso3"
+        app:layout_constraintStart_toStartOf="@id/imageButtonAsso3"
+        app:layout_constraintEnd_toEndOf="@id/imageButtonAsso3"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
