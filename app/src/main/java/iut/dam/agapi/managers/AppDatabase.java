@@ -24,16 +24,20 @@ import iut.dam.agapi.managers.models.Rapport;
 import iut.dam.agapi.managers.models.Utilisateur;
 
 
-@Database(entities = {Utilisateur.class, Administrateur.class, Categorie.class,
-        Association.class, Don.class,
-        AdministrateurAsso.class, Rapport.class}, version = 1)
+@Database(entities = {Utilisateur.class,
+        Administrateur.class,
+        Categorie.class,
+        Association.class,
+        Don.class,
+        AdministrateurAsso.class,
+        Rapport.class}, version = 1)
+
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
 
     public abstract UtilisateurDao utilisateurDao();
     public abstract DonDAO donDao();
-
     public abstract AdministrateurDAO administrateurDAO();
     public abstract CategorieDAO categorieDAO();
     public abstract AssociationDAO associationDAO();
@@ -50,5 +54,8 @@ public abstract class AppDatabase extends RoomDatabase {
         }
         return instance;
     }
+
+
+
 
 }

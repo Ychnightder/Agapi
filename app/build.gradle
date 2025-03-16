@@ -38,35 +38,30 @@ android {
 }
 
 dependencies {
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "androidx.room:room-testing:2.5.2"
-    implementation "androidx.room:room-runtime:2.6.1"
-    annotationProcessor "androidx.room:room-compiler:2.5.2"
+    implementation libs.okhttp
+    implementation libs.androidx.room.runtime
+    annotationProcessor libs.androidx.room.compiler
     implementation libs.annotation
     implementation libs.lifecycle.livedata.ktx
     implementation libs.lifecycle.viewmodel.ktx
     implementation libs.androidx.core
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
-    androidTestImplementation libs.rules.v140
-    androidTestImplementation libs.runner
-    androidTestImplementation libs.junit.v113
-    androidTestImplementation libs.espresso.core.v340
-    androidTestImplementation libs.rules
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
+    implementation libs.flexbox
+
     testImplementation libs.junit
     testImplementation libs.core
     testImplementation libs.ext.junit
+
     androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
-    implementation libs.flexbox
+    androidTestImplementation libs.androidx.junit.v115
+    androidTestImplementation libs.androidx.espresso.core.v351
+    androidTestImplementation libs.androidx.room.testing
+    androidTestImplementation libs.rules.v140
+    androidTestImplementation libs.runner
     androidTestImplementation libs.junit.jupiter
-    androidTestImplementation libs.monitor
     androidTestImplementation libs.monitor
 }
 

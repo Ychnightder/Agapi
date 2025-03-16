@@ -1,10 +1,10 @@
 package iut.dam.agapi.managers.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
 
 @Entity(
         foreignKeys = {
@@ -20,14 +20,13 @@ import androidx.room.PrimaryKey;
                         childColumns = "id_association",
                         onDelete = ForeignKey.CASCADE
                 )
-        },
-        indices = {@Index("id_utilisateur"), @Index("id_association")}
+        }
 )
 public class Don {
     @PrimaryKey(autoGenerate = true)
     public int id_don;
     public double montant;
-    public String date_don;
+    public long date_don;
     public String type_don;
     public int id_utilisateur;
     public int id_association;

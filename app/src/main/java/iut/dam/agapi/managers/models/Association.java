@@ -1,5 +1,6 @@
 package iut.dam.agapi.managers.models;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
@@ -11,16 +12,15 @@ import androidx.room.PrimaryKey;
                 parentColumns = "idCategorie",
                 childColumns = "idCategorie",
                 onDelete = ForeignKey.CASCADE
-        ),
-        indices = {@Index("idCategorie")}
+        )
 )
 public class Association {
     @PrimaryKey(autoGenerate = true)
     public int id_association;
-    public String nom_association_;
-    public String Description_;
-    public String Logo_;
-    public String QRCode_;
-    public String site_web_;
-    public String idCategorie;
+    public String nom_association;
+    public String description;
+    public String logo;
+    public String QRCode;
+    public String site_web;
+    public int idCategorie;
 }

@@ -1,6 +1,7 @@
 package iut.dam.agapi.managers.models;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
@@ -12,13 +13,11 @@ import androidx.room.PrimaryKey;
                 parentColumns = "id_utilisateur",
                 childColumns = "id_utilisateur",
                 onDelete = ForeignKey.CASCADE
-        ),
-        indices = {@Index("id_utilisateur")}
+        )
 )
 public class Administrateur {
-    @PrimaryKey
-    @NonNull
-    public String Id_admin;
+    @PrimaryKey(autoGenerate = true)
+    public int Id_admin;
     public int id_utilisateur;
 }
 

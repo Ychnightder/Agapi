@@ -32,7 +32,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonInscription"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginStart="4dp"
@@ -58,7 +58,7 @@
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="@id/header"
         app:layout_constraintEnd_toEndOf="@id/header"
-        app:layout_constraintStart_toEndOf="@id/buttonInscription"
+        app:layout_constraintStart_toEndOf="@id/btn_login"
         app:layout_constraintTop_toTopOf="@id/header"
 
         />

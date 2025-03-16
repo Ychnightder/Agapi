@@ -4,14 +4,16 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "Utilisateur")
+
+@Entity
 public class Utilisateur {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "id_utilisateur")
-    public int idUtilisateur;
+    public int id_utilisateur;
     public String nom;
-    public String prenom_;
-    public String email_;
-    public String mot_de_passe_;
-    public String date_inscription_;
+    public String prenom;
+    public String email;
+    public String mot_de_passe;
+    public long date_inscription; // Utilisez long pour stocker les dates en millisecondes
 }
+
+
