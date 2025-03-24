@@ -9,9 +9,12 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import fragments.InscriptionFragment;
 import fragments.LoginFragment;
+import helpers.FooterAuthentification;
 import iut.dam.newagapi_version311_clean.R;
+import helpers.BottomNavControler;
 
 public class Login_Inscription extends AppCompatActivity {
     Button buttonInscription, buttonConnection;
@@ -37,11 +40,6 @@ public class Login_Inscription extends AppCompatActivity {
                 viewLeft.setVisibility(View.INVISIBLE);
                 viewRight.setVisibility(View.VISIBLE);
 
-                buttonInscription.setTextColor(getResources().getColor(R.color.black));
-                buttonConnection.setTextColor(getResources().getColor(R.color.white));
-
-
-
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameContainer, new InscriptionFragment())
                         .commit();
@@ -55,14 +53,12 @@ public class Login_Inscription extends AppCompatActivity {
                 viewLeft.setVisibility(View.VISIBLE);
                 viewRight.setVisibility(View.INVISIBLE);
 
-                buttonInscription.setTextColor(getResources().getColor(R.color.white));
-                buttonConnection.setTextColor(getResources().getColor(R.color.black));
-
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.frameContainer, new LoginFragment())
                         .commit();
             }
         });
+        FooterAuthentification.retournPage(this);
 
     }
 }

@@ -37,7 +37,7 @@
                 android:fontFamily="@font/poppins_extrabold"
                 android:text="Accueil"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -68,7 +68,7 @@
                 android:fontFamily="@font/poppins_extrabold"
                 android:text="Associations"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -87,7 +87,7 @@
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="profil"
                 android:textSize="14sp"
-                app:srcCompat="@drawable/profil">
+                app:srcCompat="@drawable/profil_noir">
             </ImageButton>
             <TextView
                 android:id="@+id/textViewProfil"
@@ -96,7 +96,7 @@
                 android:fontFamily="@font/poppins_extrabold"
                 android:text="Profil"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>
