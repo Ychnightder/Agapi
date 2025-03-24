@@ -12,11 +12,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.regex.Pattern;
+
 import fragments.InscriptionFragment;
 import fragments.LoginFragment;
 import helpers.FooterAuthentification;
 import iut.dam.newagapi_version311_clean.R;
 import helpers.BottomNavControler;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
+import helpers.FooterAuthentification;
 
 public class Login_Inscription extends AppCompatActivity {
 
@@ -68,6 +81,8 @@ public class Login_Inscription extends AppCompatActivity {
             }
         });
 
+        FooterAuthentification.retournPage(this);
+
 
 
         // connexion
@@ -85,24 +100,24 @@ public class Login_Inscription extends AppCompatActivity {
         motDePasseEditTextRegister = findViewById(R.id.editTextMdpInscription);
         Button registerButton = findViewById(R.id.buttonInscription);
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validateInputsLogin()) {
-                    loginUser();
-                }
-            }
-        });
-
-
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (validateInputsInscription()) {
-                    registerUser();
-                }
-            }
-        });
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (validateInputsLogin()) {
+//                    loginUser();
+//                }
+//            }
+//        });
+//
+//
+//        registerButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (validateInputsInscription()) {
+//                    registerUser();
+//                }
+//            }
+//        });
 
 
     }
