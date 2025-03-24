@@ -14,6 +14,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.5" />
 
+    <View
+        android:id="@+id/viewRight"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@drawable/couleur_gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
+        android:visibility="gone"
+        />
+
 
     <Button
         android:id="@+id/titleInscription"
@@ -21,7 +32,7 @@
         android:layout_height="80dp"
         android:backgroundTint="#00FFFFFF"
         android:text="Inscription"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/titlebuttonConnexion"
