@@ -6,6 +6,18 @@
     tools:context="fragments.InscriptionFragment">
 
     <ImageView
+        android:id="@+id/imageLogo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/icon_app"
+        android:scaleType="fitXY"
+        android:backgroundTint="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
         android:id="@+id/imageViewEmail"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -16,6 +28,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@mipmap/icon_mail" />
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageLogo"
+        app:srcCompat="@drawable/icon_asterisque" />
+
 
 
     <EditText
@@ -24,6 +45,7 @@
         android:layout_height="wrap_content"
         android:hint="Email"
         android:textStyle="bold"
+        android:textColorHint="@color/black"
         android:gravity="center"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewEmail"
@@ -33,28 +55,54 @@
         />
 
     <ImageView
-        android:id="@+id/imageViewTelephone"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:id="@+id/imageViewProfil"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginStart="25dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayoutPartieGoogle"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_percent="0.40"
-        app:srcCompat="@mipmap/icon_tel" />
+        app:srcCompat="@drawable/profil_noir"
+        />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="35dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageVerrou"
+        app:srcCompat="@drawable/icon_asterisque" />
 
     <EditText
-        android:id="@+id/editTextTel"
+        android:id="@+id/editTextNom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="N° de Telephone"
+        android:hint="Nom"
+        android:textColorHint="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewTelephone"
+        app:layout_constraintBottom_toBottomOf="@id/imageViewProfil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfil"
+        app:layout_constraintTop_toTopOf="@+id/imageViewProfil"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <EditText
+        android:id="@+id/editTextPrenom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="Prenom"
+        android:textColorHint="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editTextNom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toEndOf="@id/imageViewProfil"
         app:layout_constraintWidth_percent="0.6" />
 
     <ImageView
@@ -66,7 +114,7 @@
         android:layout_marginBottom="40dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/imageViewTelephone"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewProfil"
         app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@mipmap/icon_verrou" />
 
@@ -76,6 +124,7 @@
         android:layout_height="wrap_content"
         android:hint="Mot de passe"
         android:textStyle="bold"
+        android:textColorHint="@color/black"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="@id/imageVerrou"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +162,7 @@
         android:layout_marginTop="200dp"
         android:background="#00FFFFFF"
         android:text="S'inscrire"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -178,5 +227,7 @@
 
     </TextView>
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
