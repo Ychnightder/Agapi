@@ -32,7 +32,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@id/imageViewEmail"
         app:layout_constraintStart_toEndOf="@id/imageViewEmail"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdp"
+        app:layout_constraintEnd_toStartOf="@id/editTextMdpLogin"
         app:layout_constraintTop_toTopOf="@id/imageViewEmail"
         app:srcCompat="@mipmap/icon_tel"
         app:layout_constraintWidth_percent="0.20"
@@ -43,6 +43,7 @@
 
 
     <EditText
+        android:id="@+id/login_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -67,13 +68,13 @@
         app:layout_constraintStart_toEndOf="@id/imageViewEmail"
         app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdp"
+        app:layout_constraintEnd_toStartOf="@id/editTextMdpLogin"
         app:layout_constraintWidth_percent="0.4"
         android:scaleType="centerCrop"
         app:srcCompat="@mipmap/icon_verrou" />
 
     <EditText
-        android:id="@+id/editTextMdp"
+        android:id="@+id/editTextMdpLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -127,7 +128,7 @@
         android:textColor="@color/text_color"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextMdp" />
+        app:layout_constraintTop_toBottomOf="@id/editTextMdpLogin" />
 
 
     <TextView
