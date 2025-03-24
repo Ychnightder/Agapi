@@ -8,7 +8,7 @@ import android.widget.TextView;
 import iut.dam.newagapi_version311_clean.R;
 import iut.dam.newagapi_version311_clean.ui.Associations;
 import iut.dam.newagapi_version311_clean.ui.Acceuil;
-import iut.dam.newagapi_version311_clean.ui.Login;
+import iut.dam.newagapi_version311_clean.ui.Login_Inscription;
 
 public class BottomNavControler {
 
@@ -44,8 +44,8 @@ public class BottomNavControler {
         });
 
         buttonProfil.setOnClickListener(v -> {
-            if (activity.getClass() != Login.class) {
-                activity.startActivity(new Intent(activity, Login.class));
+            if (activity.getClass() != Login_Inscription.class) {
+                activity.startActivity(new Intent(activity, Login_Inscription.class));
                 activity.overridePendingTransition(0, 0);
                 activity.finish();
             }

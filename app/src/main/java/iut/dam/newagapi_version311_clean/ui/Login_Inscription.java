@@ -17,7 +17,7 @@ public class Login_Inscription extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_inscirption);
+        setContentView(R.layout.login_inscription);
         buttonInscription = findViewById(R.id.titleInscription);
         buttonConnection = findViewById(R.id.titlebuttonConnexion);
 
