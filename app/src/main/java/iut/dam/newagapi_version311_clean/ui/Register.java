@@ -26,6 +26,8 @@ public class Register extends AppCompatActivity {
         buttonInscription = findViewById(R.id.buttonInscription);
         buttonTitleConnection = findViewById(R.id.titlebuttonConnexion);
 
+        //enregistrer ces donnes mail mdp
+
         buttonInscription.setOnClickListener(v -> {
             inscription(editTextMail,editTextMDP,editTextTel,this);
         });

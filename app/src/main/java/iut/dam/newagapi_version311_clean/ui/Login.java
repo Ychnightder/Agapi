@@ -25,6 +25,7 @@ public class Login extends AppCompatActivity {
 
         loginButton.setOnClickListener(v -> {
             boolean loginSuccess = true;
+            //remplace le boolean par condition verifier mot de passe
             if (loginSuccess) {
                 SharedPreferences prefs = getSharedPreferences("Login", MODE_PRIVATE);
                 prefs.edit().putBoolean("Connecter", true).apply();

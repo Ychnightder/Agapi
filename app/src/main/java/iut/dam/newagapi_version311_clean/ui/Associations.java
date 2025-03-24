@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import helpers.BottomNavControler;
 import iut.dam.newagapi_version311_clean.R;
 import static helpers.CouleursPourText.getCouleurOnclick;
-import helpers.BottomNavControler.*;
+
 
 public class Associations extends AppCompatActivity {
     FrameLayout frameLayout;

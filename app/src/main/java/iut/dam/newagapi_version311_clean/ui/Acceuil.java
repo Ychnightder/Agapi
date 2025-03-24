@@ -1,6 +1,5 @@
 package iut.dam.newagapi_version311_clean.ui;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -160,6 +159,5 @@ public class Acceuil extends AppCompatActivity {
                     new ModeleVerticalscrollview(ListeAsso[i], ImageAssociation[i], DescriptionAsso[i], ImageAssociation[i] ));
         }
     }
-
 
 }
