@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.regex.Pattern;
 
 import iut.dam.newagapi_version311_clean.R;
-import iut.dam.newagapi_version311_clean.ui.Acceuil;
+import iut.dam.newagapi_version311_clean.ui.Accueil;
 import iut.dam.newagapi_version311_clean.ui.Login_Inscription;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -101,7 +101,7 @@ public class InscriptionFragment extends Fragment {
                                 Context context = getActivity();
                                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                                 if (success) {
-                                    Intent intent = new Intent(context, Acceuil.class);
+                                    Intent intent = new Intent(context, Accueil.class);
                                     startActivity(intent);
                                 }
                             }

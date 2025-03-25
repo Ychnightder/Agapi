@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">AGAPI</string>
+    <string name="app_name">AGAPI</string>
     <string name="slogan">Votre générosité, leur avenir.</string>
     <string name="devs">Developed by Random studio</string>
     <string name="Message_PageAccueil">Association recommandée</string>
@@ -23,6 +23,8 @@
         <item> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, qui</item>
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="test_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt tempus nunc, varius imperdiet enim tempor at. Donec in egestas purus, mollis fringilla eros. Aliquam hendrerit, risus dignissim convallis dapibus, nunc erat fringilla odio, quis ullamcorper augue metus a elit. Nulla felis magna, facilisis eu viverra tempus, lacinia sed sem. Nullam vel mi urna. Praesent laoreet tincidunt pretium. Ut nec augue eu nisl tristique viverra imperdiet et dolor. Cras felis enim, placerat non vehicula pretium, rutrum eu sapien.</string>
     <string name="se_connecter_avec_google">Se connecter avec google</string>
     <string name="logoagapi" translatable="false">Logo Agapi</string>
     <string name="mail_icon">mail Icon</string>

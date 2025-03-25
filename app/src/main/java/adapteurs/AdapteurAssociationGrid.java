@@ -1,5 +1,6 @@
 package adapteurs;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +14,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import Models.ModeleHorizontalscrollview;
+import helpers.Redirection;
 import iut.dam.newagapi_version311_clean.R;
 
 
 public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssociationGrid.MyViewHolder> {
 
     Context context;
+
 
     ArrayList<ModeleHorizontalscrollview> modelAssociationImageButtons;
 
@@ -54,6 +57,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
                 holder.textViewAsso1.setText(modelAssociationImageButtons.get(index).getNomAssociation());
                 holder.imageButtonAsso1.setVisibility(View.VISIBLE);
                 holder.textViewAsso1.setVisibility(View.VISIBLE);
+                bindButton(holder.imageButtonAsso1);
             } else {
                 holder.imageButtonAsso1.setVisibility(View.GONE);
                 holder.textViewAsso1.setVisibility(View.GONE);
@@ -65,6 +69,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
                 holder.textViewAsso2.setText(modelAssociationImageButtons.get(index + 1).getNomAssociation());
                 holder.imageButtonAsso2.setVisibility(View.VISIBLE);
                 holder.textViewAsso2.setVisibility(View.VISIBLE);
+                bindButton(holder.imageButtonAsso2);
             } else {
                 holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
                 holder.textViewAsso2.setVisibility(View.INVISIBLE);
@@ -76,6 +81,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
                 holder.textViewAsso3.setText(modelAssociationImageButtons.get(index + 2).getNomAssociation());
                 holder.imageButtonAsso3.setVisibility(View.VISIBLE);
                 holder.textViewAsso3.setVisibility(View.VISIBLE);
+                bindButton(holder.imageButtonAsso3);
             } else {
                 holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
                 holder.textViewAsso3.setVisibility(View.INVISIBLE);
@@ -105,6 +111,10 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
 
         }
     }
+    private void bindButton(ImageButton button) {
+            button.setOnClickListener(v -> Redirection.clickEvent(context));
+    }
+
 }
 
 
