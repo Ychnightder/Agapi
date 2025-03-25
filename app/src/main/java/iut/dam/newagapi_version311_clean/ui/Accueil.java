@@ -24,13 +24,13 @@ import adapteurs.AdapteurVertical;
 import helpers.BottomNavControler;
 import iut.dam.newagapi_version311_clean.R;
 
-public class Acceuil extends AppCompatActivity {
+public class Accueil extends AppCompatActivity {
 
     //partie test
     int[] ImageAssociation = {
-            R.drawable.profil,R.drawable.profil,
-            R.drawable.profil,R.drawable.profil,
-            R.drawable.profil,R.drawable.profil
+            R.drawable.charity,R.drawable.charity,
+            R.drawable.charity,R.drawable.charity,
+            R.drawable.charity,R.drawable.charity,
     };
     //fin de la partie test
     ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews = new ArrayList<>();
@@ -66,8 +66,8 @@ public class Acceuil extends AppCompatActivity {
         recyclerViewHorizontal.setNestedScrollingEnabled(false);
         recyclerViewVertical.setNestedScrollingEnabled(false);
 
-        BottomNavControler.setupNavigation(this,R.id.buttonAcceuil);
-        buttonAcceuil = findViewById(R.id.buttonAcceuil);
+        BottomNavControler.setupNavigation(this,R.id.buttonAccueil);
+        buttonAcceuil = findViewById(R.id.buttonAccueil);
         textViewAcceuil = findViewById(R.id.textViewAccueil);
         buttonAcceuil.setImageResource(R.drawable.bottomnav_homeonclick);
         textViewAcceuil.setTextColor(couleurOnclick);

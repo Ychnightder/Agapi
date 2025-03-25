@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import iut.dam.newagapi_version311_clean.R;
 import iut.dam.newagapi_version311_clean.ui.Associations;
-import iut.dam.newagapi_version311_clean.ui.Acceuil;
+import iut.dam.newagapi_version311_clean.ui.Accueil;
 import iut.dam.newagapi_version311_clean.ui.Login_Inscription;
 
 public class BottomNavControler {
 
     public static void setupNavigation(Activity activity, int activeButtonId) {
-        ImageButton buttonAccueil = activity.findViewById(R.id.buttonAcceuil);
+        ImageButton buttonAccueil = activity.findViewById(R.id.buttonAccueil);
         ImageButton buttonAsso = activity.findViewById(R.id.buttonAsso);
         ImageButton buttonProfil = activity.findViewById(R.id.buttonProfil);
 
@@ -30,8 +30,8 @@ public class BottomNavControler {
         textProfil.setTextColor(defaultColor);
 
         buttonAccueil.setOnClickListener(v -> {
-            if (activity.getClass() != Acceuil.class) {
-                activity.startActivity(new Intent(activity, Acceuil.class));
+            if (activity.getClass() != Accueil.class) {
+                activity.startActivity(new Intent(activity, Accueil.class));
                 activity.overridePendingTransition(0, 0);
             }
         });
@@ -47,7 +47,6 @@ public class BottomNavControler {
             if (activity.getClass() != Login_Inscription.class) {
                 activity.startActivity(new Intent(activity, Login_Inscription.class));
                 activity.overridePendingTransition(0, 0);
-                activity.finish();
             }
         });
     }
