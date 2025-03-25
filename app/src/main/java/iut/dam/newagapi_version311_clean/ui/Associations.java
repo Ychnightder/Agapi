@@ -25,10 +25,10 @@ public class Associations extends AppCompatActivity {
         buttonAssociations.setImageResource(R.drawable.bottomnav_charityonclick);
         textViewAssociations.setTextColor(getCouleurOnclick());
 
-//        getSupportFragmentManager()
-//                .beginTransaction()
-//                .replace(R.id.frameContainer, new association_grid())
-//                .commit();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frameContainer, new association_list())
+                .commit();
 
         buttonFilter.setOnClickListener(v -> {
             getSupportFragmentManager()

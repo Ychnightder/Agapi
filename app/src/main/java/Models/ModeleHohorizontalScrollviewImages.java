@@ -1,14 +1,14 @@
 package Models;
 
 public class ModeleHohorizontalScrollviewImages {
-    int[] imagesAssociations;
+    int imagesAssociations;
 
-    public ModeleHohorizontalScrollviewImages(int[] imagesAssociations){
+    public ModeleHohorizontalScrollviewImages(int imagesAssociations){
         this.imagesAssociations = imagesAssociations;
     }
 
 
-    public int[] getImagesAssociations() {
+    public int getImagesAssociations() {
         return imagesAssociations;
     }
 

@@ -6,6 +6,6 @@
     <color name="text_color">#42A5F5</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="button_don_color">#A9E4ED</color>
-
+    <color name="gris">#DBD8E0</color>
 
 </resources>
