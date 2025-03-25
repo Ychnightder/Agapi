@@ -33,7 +33,7 @@
             android:fontFamily="@font/poppins"
             android:text="@string/slogan"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/text_svg_main_color"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -46,7 +46,7 @@
         android:gravity="center"
         android:text="@string/devs"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/text_svg_main_color"
         android:textSize="12sp"
         />
 

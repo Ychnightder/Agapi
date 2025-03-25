@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@drawable/background_menu_bottom_3buttons"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
 
@@ -26,7 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
-                android:contentDescription="home"
+                android:contentDescription="@string/home_icon"
                 android:textSize="14sp"
                 app:srcCompat="@drawable/home" />
 
@@ -35,9 +36,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_extrabold"
-                android:text="Accueil"
+                android:text="@string/accueil"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/text_svg_main_color"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -54,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
-                android:contentDescription="association"
+                android:contentDescription="@string/association_icon"
                 android:textSize="14sp"
                 app:srcCompat="@drawable/charity">
 
@@ -66,9 +67,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_extrabold"
-                android:text="Associations"
+                android:text="@string/association"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/text_svg_main_color"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -85,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
-                android:contentDescription="profil"
+                android:contentDescription="@string/profil_icon"
                 android:textSize="14sp"
                 app:srcCompat="@drawable/profil_noir">
             </ImageButton>
@@ -94,9 +95,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_extrabold"
-                android:text="Profil"
+                android:text="@string/profil"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/text_svg_main_color"
                 android:textSize="14sp" />
         </LinearLayout>
     </LinearLayout>

@@ -10,66 +10,47 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:backgroundTint="@color/transparent"
+        android:contentDescription="@string/logoagapi"
         android:scaleType="fitXY"
         android:src="@mipmap/icon_app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageViewEmail"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginBottom="300dp"
+        android:contentDescription="@string/mail_icon"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/imageViewTelephone"
+        app:layout_constraintEnd_toEndOf="@+id/imageVerrou"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/icon_mail"
+
+
         app:layout_constraintWidth_percent="0.20"
-        android:scaleType="centerCrop"
-
-
-
-
-        />
-
-
-    <ImageView
-        android:id="@+id/imageViewTelephone"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewEmail"
-        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdpLogin"
-        app:layout_constraintTop_toTopOf="@id/imageViewEmail"
-        app:srcCompat="@mipmap/icon_tel"
-        app:layout_constraintWidth_percent="0.20"
-        android:scaleType="centerCrop"
-
-
-        />
+        app:srcCompat="@mipmap/icon_mail" />
 
 
     <EditText
         android:id="@+id/login_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Email/N° de Telephone"
-        android:textStyle="bold"
         android:gravity="center"
-        android:textColorHint="@color/black"
-        app:layout_constraintBottom_toBottomOf="@id/imageViewTelephone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/imageViewTelephone"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
+        android:inputType="text|textEmailAddress|textAutoComplete"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
+
+
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/editTextMdpLogin"
+        app:layout_constraintTop_toTopOf="@+id/imageViewEmail"
         app:layout_constraintWidth_percent="0.6"
-
-
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
     <ImageView
         android:id="@+id/imageVerrou"
@@ -77,30 +58,34 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
-        app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/editTextMdpLogin"
-        app:layout_constraintWidth_percent="0.4"
+        android:contentDescription="@string/password_icon"
         android:scaleType="centerCrop"
+        app:layout_constraintEnd_toStartOf="@id/editTextMdpLogin"
+        app:layout_constraintStart_toEndOf="@id/imageViewEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewEmail"
+        app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@mipmap/icon_verrou" />
 
     <EditText
         android:id="@+id/editTextMdpLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Mot de passe"
-        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:textColorHint="@color/black"
+        android:hint="@string/mot_de_passe"
+        android:importantForAutofill="no"
+        android:inputType="text|textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageVerrou"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageVerrou"
-
         app:layout_constraintWidth_percent="0.6"
-        />
+        tools:ignore="VisualLintTextFieldSize" />
 
 
     <View
@@ -121,9 +106,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
         android:background="#00FFFFFF"
-        android:text="Connexion"
-        android:textColor="@color/black"
-        android:textSize="18dp"
+        android:text="@string/connexion"
+        android:textColor="@color/text_svg_main_color"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,9 +121,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/poppins"
-        android:text="Mot de passe oublié ?"
+        android:text="@string/mot_de_passe_oublie"
         android:textAlignment="textEnd"
-        android:textColor="@color/text_color"
+        android:textColor="#0277BD"
         app:layout_constraintBottom_toTopOf="@+id/view2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextMdpLogin" />
@@ -150,7 +135,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="ou"
+        android:text="@string/ou"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -163,7 +148,7 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_margin="20dp"
-        android:background="@color/black"
+        android:background="@color/text_svg_main_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ou">
@@ -177,13 +162,12 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ou">
-
         <ImageView
             android:id="@+id/icon_google"
             android:layout_width="50dp"
             android:layout_height="50dp"
 
-
+            android:contentDescription="@string/se_connecter_avec_google"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@mipmap/icon_google" />
 
@@ -193,15 +177,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/poppins_medium"
-            android:text="Se connecter avec google"
+            android:text="@string/se_connecter_avec_google"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="14sp"
             android:textStyle="bold">
-
         </TextView>
-
-
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,7 +27,7 @@ public class AdapteurVertical extends RecyclerView.Adapter<AdapteurVertical.MyVi
     @Override
     public AdapteurVertical.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.acceuil_recycleviewvertical, parent, false);
+        View view = inflater.inflate(R.layout.accueil_recycleviewvertical, parent, false);
         view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new AdapteurVertical.MyViewHolder(view);
     }

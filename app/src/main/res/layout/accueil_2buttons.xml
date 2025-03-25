@@ -23,8 +23,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
-            android:text="Pour vous"
-            android:textColor="@color/black" />
+            android:text="@string/pour_vous"
+            android:textColor="@color/text_svg_main_color" />
 
         <View
             android:id="@+id/barButton_Pourvous"
@@ -51,8 +51,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
-            android:text="Suivi(e)s"
-            android:textColor="@color/black" />
+            android:text="@string/suivi_e_s"
+            android:textColor="@color/text_svg_main_color" />
 
         <View
             android:id="@+id/barButton_Suivis"

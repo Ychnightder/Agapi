@@ -9,12 +9,14 @@
         android:id="@+id/imageLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@mipmap/icon_app"
-        android:scaleType="fitXY"
         android:backgroundTint="@color/transparent"
+        android:contentDescription="@string/logoagapi"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
 
     <ImageView
@@ -23,42 +25,47 @@
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="40dp"
+        android:contentDescription="@string/mail_icon"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/imageVerrou"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.4"
         app:srcCompat="@mipmap/icon_mail" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="35dp"
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
+        android:contentDescription="@string/obligatoire"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageLogo"
         app:srcCompat="@drawable/icon_asterisque" />
-
 
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:textStyle="bold"
-        android:textColorHint="@color/black"
         android:gravity="center"
+        android:hint="@string/email"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageViewEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toEndOf="@+id/imageViewEmail"
-        app:layout_constraintWidth_percent="0.6"
-        />
+        app:layout_constraintWidth_percent="0.6" />
 
     <ImageView
         android:id="@+id/imageViewProfil"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="25dp"
+        android:contentDescription="@string/profil"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayoutPartieGoogle"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +80,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
+        android:contentDescription="@string/obligatoire"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageVerrou"
         app:srcCompat="@drawable/icon_asterisque" />
@@ -82,8 +90,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Nom"
-        android:textColorHint="@color/black"
+        android:hint="@string/nom"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageViewProfil"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,13 +107,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="Prenom"
-        android:textColorHint="@color/black"
+        android:hint="@string/prenom"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/editTextNom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toEndOf="@id/imageViewProfil"
+        app:layout_constraintTop_toBottomOf="@id/editTextNom"
         app:layout_constraintWidth_percent="0.6" />
 
     <ImageView
@@ -112,6 +126,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="40dp"
+        android:contentDescription="@string/password_icon"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/imageViewProfil"
@@ -122,15 +137,17 @@
         android:id="@+id/editTextMdpInscription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:textStyle="bold"
-        android:textColorHint="@color/black"
         android:gravity="center"
+        android:hint="@string/mot_de_passe"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColorHint="@color/text_svg_main_color"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/imageVerrou"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageVerrou"
-        app:layout_constraintWidth_percent="0.6"
-        />
+        app:layout_constraintWidth_percent="0.6" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -138,10 +155,10 @@
         android:layout_height="40dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="25dp"
+        android:contentDescription="@string/obligatoire"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewEmail"
         app:srcCompat="@drawable/icon_asterisque"  />
-
 
     <View
         android:id="@+id/viewButton"
@@ -161,9 +178,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
         android:background="#00FFFFFF"
-        android:text="S'inscrire"
-        android:textColor="@color/black"
-        android:textSize="18dp"
+        android:text="@string/s_inscrire"
+        android:textColor="@color/text_svg_main_color"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -177,7 +194,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins"
-        android:text="ou"
+        android:text="@string/ou"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -190,7 +207,7 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_margin="20dp"
-        android:background="@color/black"
+        android:background="@color/text_svg_main_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ou">
@@ -210,22 +227,23 @@
         android:id="@+id/icon_google"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/se_connecter_avec_google"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/icon_google" />
 
-    <TextView
-        android:id="@+id/textconnectionGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Se connecter avec google"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="14sp"
-        android:textStyle="bold">
+        <TextView
+            android:id="@+id/textconnectionGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/se_connecter_avec_google"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            android:textStyle="bold">
 
-    </TextView>
+        </TextView>
     </LinearLayout>
 
 

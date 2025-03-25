@@ -50,7 +50,7 @@ public class Acceuil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.acceuil);
+        setContentView(R.layout.accueil);
 
         recyclerViewHorizontal = findViewById(R.id.recyclerViewHorizontal);
         recyclerViewVertical = findViewById(R.id.recyclerViewVertical);

@@ -21,11 +21,11 @@
             android:layout_height="wrap_content"
             >
 
-            <include layout="@layout/acceuil_header" android:id="@+id/header"/>
+            <include layout="@layout/accueil_header" android:id="@+id/header"/>
 
             <include
                 android:id="@+id/login_buttons_container"
-                layout="@layout/acceuil_2buttons"
+                layout="@layout/accueil_2buttons"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@+id/header"
@@ -44,8 +44,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="140dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="@string/Message_PageAcceuil"
-                android:textColor="@color/black"
+                android:text="@string/Message_PageAccueil"
+                android:textColor="@color/text_svg_main_color"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"

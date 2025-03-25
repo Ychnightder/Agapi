@@ -28,7 +28,7 @@ public class AdapteurHorizontal extends RecyclerView.Adapter<AdapteurHorizontal.
     @Override
     public AdapteurHorizontal.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inlater = LayoutInflater.from(context);
-        View view = inlater.inflate(R.layout.acceuil_recycleviewhorizontal, parent, false);
+        View view = inlater.inflate(R.layout.accueil_recycleviewhorizontal, parent, false);
         view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new AdapteurHorizontal.MyViewHolder(view);
     }

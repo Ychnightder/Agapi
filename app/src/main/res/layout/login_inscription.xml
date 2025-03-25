@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -31,8 +30,8 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="Inscription"
-        android:textColor="@color/black"
+        android:text="@string/inscription"
+        android:textColor="@color/text_svg_main_color"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/titlebuttonConnexion"
@@ -48,8 +47,8 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:backgroundTint="#00FFFFFF"
-        android:text="Connection"
-        android:textColor="@color/black"
+        android:text="@string/connexion"
+        android:textColor="@color/text_svg_main_color"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/titleInscription"
         app:layout_constraintEnd_toEndOf="parent"

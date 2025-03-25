@@ -2,7 +2,7 @@
     <string name="app_name">AGAPI</string>
     <string name="slogan">Votre générosité, leur avenir.</string>
     <string name="devs">Developed by Random studio</string>
-    <string name="Message_PageAcceuil">Association recommandée</string>
+    <string name="Message_PageAccueil">Association recommandée</string>
 
     <!--partie test -->
     <string-array name="nom_association">
@@ -24,5 +24,32 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="se_connecter_avec_google">Se connecter avec google</string>
+    <string name="logoagapi">LogoAgapi</string>
+    <string name="mail_icon">mail Icon</string>
+    <string name="email">Email</string>
+    <string name="password_icon">password icon</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="mot_de_passe_oublie">Mot de passe oublié ?</string>
+    <string name="ou">ou</string>
+    <string name="google_icon">google icon</string>
+    <string name="obligatoire">obligatoire</string>
+    <string name="profil">profil</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prenom</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="filtrer_associations">Filtrer associations</string>
+    <string name="search_icon">Search Icon</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="home_icon">Home Icon</string>
+    <string name="association">Association</string>
+    <string name="accueil">Accueil</string>
+    <string name="association_icon">association icon</string>
+    <string name="profil_icon">profil icon</string>
+    <string name="retour">Retour</string>
+    <string name="inscription">Inscription</string>
+    <string name="pour_vous">Pour vous</string>
+    <string name="suivi_e_s">Suivi(e)s</string>
     <!-- fin de la partie test -->
 </resources>
