@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AGAPI</string>
+    <string name="slogan">Your generosity, their future.</string>
+    <string name="devs">Developed by Random Studio</string>
+    <string name="Message_PageAccueil">Recommended associations</string>
+    <string name="se_connecter_avec_google">Sign in with Google</string>
+    <string name="mail_icon">Email icon</string>
+    <string name="email">Email</string>
+    <string name="password_icon">Password icon</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="connexion">Login</string>
+    <string name="mot_de_passe_oublie">Forgot password?</string>
+    <string name="ou">or</string>
+    <string name="google_icon">Google icon</string>
+    <string name="obligatoire">Required</string>
+    <string name="profil">Profile</string>
+    <string name="nom">Last name</string>
+    <string name="prenom">First name</string>
+    <string name="s_inscrire">Sign up</string>
+    <string name="filtrer_associations">Filter Associations</string>
+    <string name="search_icon">Search icon</string>
+    <string name="rechercher">Search</string>
+    <string name="home_icon">Home icon</string>
+    <string name="association">Association</string>
+    <string name="accueil">Home</string>
+    <string name="association_icon">Association icon</string>
+    <string name="profil_icon">Profile icon</string>
+    <string name="retour">Back</string>
+    <string name="inscription">Registration</string>
+    <string name="pour_vous">For you</string>
+    <string name="suivi_e_s">Followed</string>
+</resources>

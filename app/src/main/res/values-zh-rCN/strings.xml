@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AGAPI</string>
+    <string name="slogan">您的慷慨，他们的未来。</string>
+    <string name="devs">由 Random Studio 开发</string>
+    <string name="Message_PageAccueil">推荐的协会</string>
+    <string name="se_connecter_avec_google">使用 Google 登录</string>
+    <string name="mail_icon">电子邮件图标</string>
+    <string name="email">电子邮件</string>
+    <string name="password_icon">密码图标</string>
+    <string name="mot_de_passe">密码</string>
+    <string name="connexion">登录</string>
+    <string name="mot_de_passe_oublie">忘记密码？</string>
+    <string name="ou">或</string>
+    <string name="google_icon">Google 图标</string>
+    <string name="obligatoire">必填</string>
+    <string name="profil">个人资料</string>
+    <string name="nom">姓氏</string>
+    <string name="prenom">名字</string>
+    <string name="s_inscrire">注册</string>
+    <string name="filtrer_associations">筛选协会</string>
+    <string name="search_icon">搜索图标</string>
+    <string name="rechercher">搜索</string>
+    <string name="home_icon">主页图标</string>
+    <string name="association">协会</string>
+    <string name="accueil">主页</string>
+    <string name="association_icon">协会图标</string>
+    <string name="profil_icon">个人资料图标</string>
+    <string name="retour">返回</string>
+    <string name="inscription">注册</string>
+    <string name="pour_vous">为您推荐</string>
+    <string name="suivi_e_s">关注</string>
+</resources>

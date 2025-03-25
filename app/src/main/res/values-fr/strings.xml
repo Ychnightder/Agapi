@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AGAPI</string>
+    <string name="slogan">Votre générosité, leur avenir.</string>
+    <string name="devs">Développée par Random studio</string>
+    <string name="Message_PageAccueil">Association recommandée</string>
+    <string name="se_connecter_avec_google">Se connecter avec google</string>
+    <string name="mail_icon">Icône email</string>
+    <string name="email">Email</string>
+    <string name="password_icon">Icône mots de passe</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="mot_de_passe_oublie">Mot de passe oublié ?</string>
+    <string name="ou">ou</string>
+    <string name="google_icon">Icône google</string>
+    <string name="obligatoire">obligatoire</string>
+    <string name="profil">Profil</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="filtrer_associations">Filtre Association</string>
+    <string name="search_icon">Icône rechercher</string>
+    <string name="rechercher">Rechercher</string>
+    <string name="home_icon">Icône Accueil</string>
+    <string name="association">Association</string>
+    <string name="accueil">Accueil</string>
+    <string name="association_icon">Icône association</string>
+    <string name="profil_icon">Icône profile</string>
+    <string name="retour">Retour</string>
+    <string name="inscription">Inscription</string>
+    <string name="pour_vous">Pour vous</string>
+    <string name="suivi_e_s">Suivi(e)s</string>
+</resources>
