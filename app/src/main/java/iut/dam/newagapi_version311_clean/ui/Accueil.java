@@ -66,7 +66,7 @@ public class Accueil extends AppCompatActivity {
         recyclerViewHorizontal.setNestedScrollingEnabled(false);
         recyclerViewVertical.setNestedScrollingEnabled(false);
 
-        BottomNavControler.setupNavigation(this,R.id.buttonAccueil);
+        BottomNavControler.setupNavigation(this);
         buttonAcceuil = findViewById(R.id.buttonAccueil);
         textViewAcceuil = findViewById(R.id.textViewAccueil);
         buttonAcceuil.setImageResource(R.drawable.bottomnav_homeonclick);

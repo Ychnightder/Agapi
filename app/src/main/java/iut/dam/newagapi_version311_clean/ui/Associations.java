@@ -36,7 +36,7 @@ public class Associations extends AppCompatActivity {
                     .replace(R.id.frameContainer, new association_grid())
                     .commit();
         });
-        BottomNavControler.setupNavigation(this,R.id.buttonAsso);
+        BottomNavControler.setupNavigation(this);
 
     }
 

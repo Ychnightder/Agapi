@@ -20,30 +20,30 @@
         android:layout_height="48dp"
         android:contentDescription="@string/filtrer_associations"
         android:background="@color/transparent"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@id/toolbar4"
         app:layout_constraintEnd_toEndOf="@id/toolbar4"
         app:layout_constraintTop_toTopOf="@id/toolbar4"
-        app:srcCompat="@mipmap/association_filter"
+        app:srcCompat="@drawable/association_filter"
         android:layout_marginEnd="15dp"
         />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:contentDescription="@string/search_icon"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
         app:layout_constraintStart_toStartOf="@+id/toolbar4"
         app:layout_constraintTop_toTopOf="@+id/toolbar4"
-        app:srcCompat="@mipmap/association_search">
+        app:srcCompat="@drawable/association_search">
     </ImageView>
 
     <EditText
         android:id="@+id/editTextText"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:ems="10"
         android:hint="@string/rechercher"
         android:inputType="text"
         android:textColorHint="#263238"

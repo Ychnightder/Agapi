@@ -17,7 +17,7 @@
 
 
         <activity
-            android:name=".ui.Splash"
+            android:name=".ui.Profil_Admin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +30,7 @@
         <activity android:name=".ui.Login_Inscription" />
         <activity android:name=".ui.Page_association" />
         <activity android:name=".ui.Page_Don" />
+
     </application>
 
 </manifest>
