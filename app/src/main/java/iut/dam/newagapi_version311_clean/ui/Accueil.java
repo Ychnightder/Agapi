@@ -82,7 +82,7 @@ public class Accueil extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        boolean connecter = preferences.getBoolean("Connecter", false);
+        boolean connecter = preferences.getBoolean("Connecter", true);
 
 
         View loginButtonsContainer = findViewById(R.id.login_buttons_container);
