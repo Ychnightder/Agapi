@@ -1,7 +1,10 @@
 package fragments;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -22,6 +25,7 @@ import java.util.regex.Pattern;
 import iut.dam.newagapi_version311_clean.R;
 import iut.dam.newagapi_version311_clean.ui.Accueil;
 import iut.dam.newagapi_version311_clean.ui.Login_Inscription;
+import iut.dam.newagapi_version311_clean.ui.Profil;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -101,9 +105,12 @@ public class LoginFragment extends Fragment {
                                 Context context = getActivity();
                                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
                                 if (success) {
-                                    // Rediriger vers l'écran principal ou l'écran d'accueil
-//                                    Intent intent = new Intent(context, Acceuil.class);
-//                                    startActivity(intent);
+                                    SharedPreferences sharedPref = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPref.edit();
+                                    editor.putBoolean("isLoggedIn", true);
+                                    editor.apply();
+                                    Intent intent = new Intent(context, Profil.class);
+                                    startActivity(intent);
                                 }
                             }
                         });
