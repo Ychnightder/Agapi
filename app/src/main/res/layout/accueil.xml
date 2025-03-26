@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="140dp"
+                android:layout_marginTop="150dp"
                 android:fontFamily="@font/poppins_semibold"
                 android:text="@string/Message_PageAccueil"
                 android:textColor="@color/text_svg_main_color"

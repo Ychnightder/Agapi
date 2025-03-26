@@ -6,11 +6,13 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import helpers.FooterAuthentification;
 import iut.dam.newagapi_version311_clean.R;
 
 public class Page_association extends AppCompatActivity {
 
     Button buttonDon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class Page_association extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
+        FooterAuthentification.retournPage(this);
     }
 
 }

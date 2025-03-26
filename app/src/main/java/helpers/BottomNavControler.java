@@ -25,6 +25,7 @@ public class BottomNavControler {
 
 
         int defaultColor = CouleursPourText.getDefaultCouleur();
+        int couleurOnclick = CouleursPourText.getCouleurOnclick();
 
 
         textAccueil.setTextColor(defaultColor);
@@ -42,6 +43,7 @@ public class BottomNavControler {
             if (activity.getClass() != Associations.class) {
                 activity.startActivity(new Intent(activity, Associations.class));
                 activity.overridePendingTransition(0, 0);
+
             }
         });
 

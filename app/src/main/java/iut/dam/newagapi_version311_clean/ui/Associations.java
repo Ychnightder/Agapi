@@ -1,19 +1,24 @@
 package iut.dam.newagapi_version311_clean.ui;
 
+
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import helpers.BottomNavControler;
+import helpers.CouleursPourText;
 import iut.dam.newagapi_version311_clean.R;
-import static helpers.CouleursPourText.getCouleurOnclick;
+
 
 
 public class Associations extends AppCompatActivity {
     FrameLayout frameLayout;
     ImageButton buttonFilter, buttonAssociations;
     TextView textViewAssociations;
+    private final int couleurOnclick = Color.parseColor("#F2409D");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +28,7 @@ public class Associations extends AppCompatActivity {
         buttonFilter = findViewById(R.id.buttonFilter);
         textViewAssociations = findViewById(R.id.textViewAssociations);
         buttonAssociations.setImageResource(R.drawable.bottomnav_charityonclick);
-        textViewAssociations.setTextColor(getCouleurOnclick());
+        textViewAssociations.setTextColor(couleurOnclick);
 
         getSupportFragmentManager()
                 .beginTransaction()

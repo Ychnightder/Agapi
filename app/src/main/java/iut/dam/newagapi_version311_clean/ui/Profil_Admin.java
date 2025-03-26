@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import fragments.AdminFragmentAssociation;
 import fragments.UserFragment;
@@ -13,7 +14,7 @@ import iut.dam.newagapi_version311_clean.R;
 
 public class Profil_Admin extends AppCompatActivity {
 
-    LinearLayout tabProfil, tabAssociation;
+    ConstraintLayout tabProfil, tabAssociation;
 
     View underlineProfil, underlineAssociation ;
 
