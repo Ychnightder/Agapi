@@ -92,7 +92,7 @@ public class Accueil extends AppCompatActivity {
         rootLayout = findViewById(R.id.main);
 
 
-        if (connecter) {
+        if (connecter && buttonPourvous != null) {
 
             loginButtonsContainer.setVisibility(View.VISIBLE);
 
