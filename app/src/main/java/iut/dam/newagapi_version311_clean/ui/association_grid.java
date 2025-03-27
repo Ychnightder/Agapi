@@ -26,43 +26,8 @@ public class association_grid extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewAssociationGrid);
 
         ArrayList<ModeleHorizontalscrollview> list = new ArrayList<>();
-        //partie test
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso1"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso2"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso3"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso4"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso5"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso6"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso7"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso1"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso2"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso3"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso4"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso5"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso6"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso7"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso1"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso2"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso3"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso4"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso5"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso6"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso7"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso1"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso2"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso3"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso4"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso5"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso6"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso7"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso1"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso2"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso3"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso4"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso5"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso6"));
-        list.add(new ModeleHorizontalscrollview(R.drawable.profil_noir, "Asso7"));
-        // fin de la partie test
+
+
         AdapteurAssociationGrid adapter = new AdapteurAssociationGrid(this.getContext(), list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);

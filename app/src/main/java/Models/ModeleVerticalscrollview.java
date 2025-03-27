@@ -1,34 +1,31 @@
 package Models;
 
 public class ModeleVerticalscrollview {
-    String nomAssociation;
-    int iconeAssociation;
+    private String nom;
+    private String logoUrl;
+    private String description;
+    private String imageUrl;
 
-    String descriptionAsso;
-
-    int imageAssociation;
-
-
-    public ModeleVerticalscrollview(String nomAssociation, int iconeAssociation, String descriptionAsso, int imageAssociation) {
-        this.nomAssociation = nomAssociation;
-        this.iconeAssociation = iconeAssociation;
-        this.descriptionAsso = descriptionAsso;
-        this.imageAssociation = imageAssociation;
+    public ModeleVerticalscrollview(String nom, String logoUrl, String description, String imageUrl) {
+        this.nom = nom;
+        this.logoUrl = logoUrl;
+        this.description = description;
+        this.imageUrl = imageUrl;
     }
 
     public String getNomAssociation() {
-        return nomAssociation;
+        return nom;
     }
 
-    public int getIconeAssociation() {
-        return iconeAssociation;
+    public String getIconeAssociationUrl() {
+        return logoUrl;
     }
 
     public String getDescriptionAsso() {
-        return descriptionAsso;
+        return description;
     }
 
-    public int getImageAssociation() {
-        return imageAssociation;
+    public String getImageAssociationUrl() {
+        return imageUrl;
     }
 }

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import Models.ModeleHorizontalscrollview;
@@ -48,47 +50,58 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
 
 
     @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-            int index = position * 3;
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        int index = position * 3;
 
-            // Item 1
-            if (index < modelAssociationImageButtons.size()) {
-                holder.imageButtonAsso1.setImageResource(modelAssociationImageButtons.get(index).getImageAssociation());
-                holder.textViewAsso1.setText(modelAssociationImageButtons.get(index).getNomAssociation());
-                holder.imageButtonAsso1.setVisibility(View.VISIBLE);
-                holder.textViewAsso1.setVisibility(View.VISIBLE);
-                bindButton(holder.imageButtonAsso1);
-            } else {
-                holder.imageButtonAsso1.setVisibility(View.GONE);
-                holder.textViewAsso1.setVisibility(View.GONE);
-            }
+        // Item 1
+        if (index < modelAssociationImageButtons.size()) {
+            Glide.with(context)
+                    .load(modelAssociationImageButtons.get(index).getImageAssociationUrl())
+                    .placeholder(R.drawable.charity)
+                    .into(holder.imageButtonAsso1);
 
-            // Item 2
-            if (index + 1 < modelAssociationImageButtons.size()) {
-                holder.imageButtonAsso2.setImageResource(modelAssociationImageButtons.get(index + 1).getImageAssociation());
-                holder.textViewAsso2.setText(modelAssociationImageButtons.get(index + 1).getNomAssociation());
-                holder.imageButtonAsso2.setVisibility(View.VISIBLE);
-                holder.textViewAsso2.setVisibility(View.VISIBLE);
-                bindButton(holder.imageButtonAsso2);
-            } else {
-                holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
-                holder.textViewAsso2.setVisibility(View.INVISIBLE);
-            }
-
-            // Item 3
-            if (index + 2 < modelAssociationImageButtons.size()) {
-                holder.imageButtonAsso3.setImageResource(modelAssociationImageButtons.get(index + 2).getImageAssociation());
-                holder.textViewAsso3.setText(modelAssociationImageButtons.get(index + 2).getNomAssociation());
-                holder.imageButtonAsso3.setVisibility(View.VISIBLE);
-                holder.textViewAsso3.setVisibility(View.VISIBLE);
-                bindButton(holder.imageButtonAsso3);
-            } else {
-                holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
-                holder.textViewAsso3.setVisibility(View.INVISIBLE);
-
+            holder.textViewAsso1.setText(modelAssociationImageButtons.get(index).getNomAssociation());
+            holder.imageButtonAsso1.setVisibility(View.VISIBLE);
+            holder.textViewAsso1.setVisibility(View.VISIBLE);
+            bindButton(holder.imageButtonAsso1);
+        } else {
+            holder.imageButtonAsso1.setVisibility(View.GONE);
+            holder.textViewAsso1.setVisibility(View.GONE);
         }
 
+        // Item 2
+        if (index + 1 < modelAssociationImageButtons.size()) {
+            Glide.with(context)
+                    .load(modelAssociationImageButtons.get(index + 1).getImageAssociationUrl())
+                    .placeholder(R.drawable.charity)
+                    .into(holder.imageButtonAsso2);
+
+            holder.textViewAsso2.setText(modelAssociationImageButtons.get(index + 1).getNomAssociation());
+            holder.imageButtonAsso2.setVisibility(View.VISIBLE);
+            holder.textViewAsso2.setVisibility(View.VISIBLE);
+            bindButton(holder.imageButtonAsso2);
+        } else {
+            holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
+            holder.textViewAsso2.setVisibility(View.INVISIBLE);
+        }
+
+        // Item 3
+        if (index + 2 < modelAssociationImageButtons.size()) {
+            Glide.with(context)
+                    .load(modelAssociationImageButtons.get(index + 2).getImageAssociationUrl())
+                    .placeholder(R.drawable.charity)
+                    .into(holder.imageButtonAsso3);
+
+            holder.textViewAsso3.setText(modelAssociationImageButtons.get(index + 2).getNomAssociation());
+            holder.imageButtonAsso3.setVisibility(View.VISIBLE);
+            holder.textViewAsso3.setVisibility(View.VISIBLE);
+            bindButton(holder.imageButtonAsso3);
+        } else {
+            holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
+            holder.textViewAsso3.setVisibility(View.INVISIBLE);
+        }
     }
+
 
     @Override
     public int getItemCount() {

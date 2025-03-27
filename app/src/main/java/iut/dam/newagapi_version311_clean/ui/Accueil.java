@@ -3,6 +3,7 @@ package iut.dam.newagapi_version311_clean.ui;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
@@ -16,7 +17,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import Models.Association;
+import Models.AssociationRepository;
 import Models.ModeleHorizontalscrollview;
 import Models.ModeleVerticalscrollview;
 import adapteurs.AdapteurHorizontal;
@@ -149,15 +153,66 @@ public class Accueil extends AppCompatActivity {
 
     }
     private void setrecycleviews() {
-        String[] ListeAsso = getResources().getStringArray(R.array.nom_association);
-        String[] DescriptionAsso = getResources().getStringArray(R.array.Description_association);
-        for (int i = 0; i < ListeAsso.length; i++) {
-            modeleHorizontalscrollviews.add(
-                    new ModeleHorizontalscrollview( ImageAssociation[i] , ListeAsso[i])
-            );
-            modeleverticalscrollviews.add(
-                    new ModeleVerticalscrollview(ListeAsso[i], ImageAssociation[i], DescriptionAsso[i], ImageAssociation[i] ));
-        }
+        new Thread(() -> {
+            AssociationRepository repository = new AssociationRepository();
+            List<Association> associations = repository.getAssociationsFromApi();
+
+            // 清空旧数据，防止叠加或残留
+            modeleHorizontalscrollviews.clear();
+            modeleverticalscrollviews.clear();
+
+            if (associations != null) {
+                int index = 0;
+                for (Association association : associations) {
+                    index++;
+
+                    //Passer des donnes au recycleview horizontal
+                    modeleHorizontalscrollviews.add(
+                            new ModeleHorizontalscrollview(
+                                    association.getLogo(),
+                                    association.getNom_association()
+                            )
+                    );
+
+                    //recupere premier image(URL) dans la base de donne
+                    String firstImage = null;
+                    List<String> imageList = association.getImagePresentation();
+                    if (imageList != null && !imageList.isEmpty()) {
+                        firstImage = imageList.get(0).trim();
+                    }
+
+                    Log.d("ASSO_DATA", "Vertical #" + index + " - " + association.getNom_association());
+                    Log.d("ASSO_DATA", "Logo: " + association.getLogo());
+                    Log.d("ASSO_DATA", "Image: " + firstImage);
+
+                    //Passer des donnes au recycleview vertical
+                    modeleverticalscrollviews.add(
+                            new ModeleVerticalscrollview(
+                                    association.getNom_association(),
+                                    association.getLogo(),
+                                    association.getDescription(),
+                                    firstImage
+                            )
+                    );
+                }
+
+                // Actualiser les views
+                //les log.d c pour tester on peut enlever a la fin
+                runOnUiThread(() -> {
+                    Log.d("ASSO_SIZE", "Horizontal count: " + modeleHorizontalscrollviews.size());
+                    Log.d("ASSO_SIZE", "Vertical count: " + modeleverticalscrollviews.size());
+
+                    adapteurHorizontal.notifyDataSetChanged();
+                    adapteurVertical.notifyDataSetChanged();
+                });
+            } else {
+                Log.e("ASSO_FETCH", "Association list is null.");
+            }
+        }).start();
     }
+
+
+
+
 
 }

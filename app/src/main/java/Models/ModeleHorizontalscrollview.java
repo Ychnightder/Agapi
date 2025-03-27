@@ -1,12 +1,11 @@
 package Models;
 
 public class ModeleHorizontalscrollview {
-    String nomAssociation;
-    int imageAssociation;
+    private String nomAssociation;
+    private String imageAssociationUrl;
 
-
-    public ModeleHorizontalscrollview(int imageAssociation, String nomAssociation) {
-        this.imageAssociation = imageAssociation;
+    public ModeleHorizontalscrollview(String imageAssociationUrl, String nomAssociation) {
+        this.imageAssociationUrl = imageAssociationUrl;
         this.nomAssociation = nomAssociation;
     }
 
@@ -14,7 +13,7 @@ public class ModeleHorizontalscrollview {
         return nomAssociation;
     }
 
-    public int getImageAssociation() {
-        return imageAssociation;
+    public String getImageAssociationUrl() {
+        return imageAssociationUrl;
     }
 }
