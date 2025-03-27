@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewStub;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -86,11 +87,10 @@ public class Accueil extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        boolean connecter = preferences.getBoolean("Connecter", true);
-
-
-        View loginButtonsContainer = findViewById(R.id.login_buttons_container);
+        boolean connecter = preferences.getBoolean("Connecter", false);
+        ViewGroup loginButtonsContainer = findViewById(R.id.view3);
         rootLayout = findViewById(R.id.main);
+
 
         if (connecter) {
 
