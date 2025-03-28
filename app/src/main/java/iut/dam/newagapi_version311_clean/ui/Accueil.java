@@ -17,13 +17,13 @@ import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import Models.Association;
 import Models.AssociationRepository;
-import Models.ModeleHorizontalscrollview;
-import Models.ModeleVerticalscrollview;
 import adapteurs.AdapteurHorizontal;
 import adapteurs.AdapteurVertical;
 import helpers.BottomNavControler;
@@ -31,15 +31,8 @@ import iut.dam.newagapi_version311_clean.R;
 
 public class Accueil extends AppCompatActivity {
 
-    //partie test
-    int[] ImageAssociation = {
-            R.drawable.charity,R.drawable.charity,
-            R.drawable.charity,R.drawable.charity,
-            R.drawable.charity,R.drawable.charity,
-    };
-    //fin de la partie test
-    ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews = new ArrayList<>();
-    ArrayList<ModeleVerticalscrollview> modeleverticalscrollviews = new ArrayList<>();
+    ArrayList<Association> modeleHorizontalscrollviews = new ArrayList<>();
+    ArrayList<Association> modeleverticalscrollviews = new ArrayList<>();
     RecyclerView recyclerViewHorizontal, recyclerViewVertical;
     AdapteurHorizontal adapteurHorizontal;
     AdapteurVertical adapteurVertical;
@@ -51,7 +44,7 @@ public class Accueil extends AppCompatActivity {
     View viewPourvous, viewSuivies;
 
     private final int couleurOnclick = Color.parseColor("#F2409D");
-    SharedPreferences preferences;
+    SharedPreferences preferences,donnesAsso;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -157,7 +150,6 @@ public class Accueil extends AppCompatActivity {
             AssociationRepository repository = new AssociationRepository();
             List<Association> associations = repository.getAssociationsFromApi();
 
-            // 清空旧数据，防止叠加或残留
             modeleHorizontalscrollviews.clear();
             modeleverticalscrollviews.clear();
 
@@ -168,7 +160,7 @@ public class Accueil extends AppCompatActivity {
 
                     //Passer des donnes au recycleview horizontal
                     modeleHorizontalscrollviews.add(
-                            new ModeleHorizontalscrollview(
+                            new Association(
                                     association.getLogo(),
                                     association.getNom_association()
                             )
@@ -187,7 +179,7 @@ public class Accueil extends AppCompatActivity {
 
                     //Passer des donnes au recycleview vertical
                     modeleverticalscrollviews.add(
-                            new ModeleVerticalscrollview(
+                            new Association(
                                     association.getNom_association(),
                                     association.getLogo(),
                                     association.getDescription(),
@@ -199,11 +191,18 @@ public class Accueil extends AppCompatActivity {
                 // Actualiser les views
                 //les log.d c pour tester on peut enlever a la fin
                 runOnUiThread(() -> {
-                    Log.d("ASSO_SIZE", "Horizontal count: " + modeleHorizontalscrollviews.size());
-                    Log.d("ASSO_SIZE", "Vertical count: " + modeleverticalscrollviews.size());
 
                     adapteurHorizontal.notifyDataSetChanged();
                     adapteurVertical.notifyDataSetChanged();
+                    Gson gson = new Gson();
+                    String jsonListHorizontal = gson.toJson(modeleHorizontalscrollviews);
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("ASSO_DATA", MODE_PRIVATE);
+                    sharedPreferences.edit().putString("HorizontalList", jsonListHorizontal).apply();
+                    String jsonListVertical = gson.toJson(modeleverticalscrollviews);
+                    SharedPreferences sharedPreferencesList = getSharedPreferences("ASSO_DATAList", MODE_PRIVATE);
+                    sharedPreferencesList.edit().putString("VerticalList", jsonListVertical).apply();
+
                 });
             } else {
                 Log.e("ASSO_FETCH", "Association list is null.");

@@ -14,14 +14,14 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import Models.ModeleHorizontalscrollview;
+import Models.Association;
 import iut.dam.newagapi_version311_clean.R;
 
 public class AdapteurHorizontal extends RecyclerView.Adapter<AdapteurHorizontal.MyViewHolder> {
     Context context;
-    ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews;
+    ArrayList<Association> modeleHorizontalscrollviews;
 
-    public AdapteurHorizontal(Context context, ArrayList<ModeleHorizontalscrollview> modeleHorizontalscrollviews) {
+    public AdapteurHorizontal(Context context, ArrayList<Association> modeleHorizontalscrollviews) {
         this.context = context;
         this.modeleHorizontalscrollviews = modeleHorizontalscrollviews;
     }
@@ -36,15 +36,16 @@ public class AdapteurHorizontal extends RecyclerView.Adapter<AdapteurHorizontal.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ModeleHorizontalscrollview item = modeleHorizontalscrollviews.get(position);
+        Association item = modeleHorizontalscrollviews.get(position);
 
-        holder.textView.setText(item.getNomAssociation());
+        holder.textView.setText(item.getNom_association());
 
         Glide.with(context)
-                .load(item.getImageAssociationUrl())
+                .load(item.getLogo())
                 .placeholder(R.drawable.charity)
                 .into(holder.imageButton);
     }
+
 
     @Override
     public int getItemCount() {

@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-import Models.ModeleHorizontalscrollview;
+import Models.Association;
 import helpers.Redirection;
 import iut.dam.newagapi_version311_clean.R;
 
@@ -25,9 +25,9 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
     Context context;
 
 
-    ArrayList<ModeleHorizontalscrollview> modelAssociationImageButtons;
+    ArrayList<Association> modelAssociationImageButtons;
 
-    public AdapteurAssociationGrid(Context context, ArrayList<ModeleHorizontalscrollview> modelAssociationImageButtons) {
+    public AdapteurAssociationGrid(Context context, ArrayList<Association> modelAssociationImageButtons) {
         this.context = context;
         this.modelAssociationImageButtons = modelAssociationImageButtons;
     }
@@ -55,12 +55,14 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
 
         // Item 1
         if (index < modelAssociationImageButtons.size()) {
+            Association asso1 = modelAssociationImageButtons.get(index);
+
             Glide.with(context)
-                    .load(modelAssociationImageButtons.get(index).getImageAssociationUrl())
+                    .load(asso1.getLogo())
                     .placeholder(R.drawable.charity)
                     .into(holder.imageButtonAsso1);
 
-            holder.textViewAsso1.setText(modelAssociationImageButtons.get(index).getNomAssociation());
+            holder.textViewAsso1.setText(asso1.getNom_association());
             holder.imageButtonAsso1.setVisibility(View.VISIBLE);
             holder.textViewAsso1.setVisibility(View.VISIBLE);
             bindButton(holder.imageButtonAsso1);
@@ -71,12 +73,14 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
 
         // Item 2
         if (index + 1 < modelAssociationImageButtons.size()) {
+            Association asso2 = modelAssociationImageButtons.get(index + 1);
+
             Glide.with(context)
-                    .load(modelAssociationImageButtons.get(index + 1).getImageAssociationUrl())
+                    .load(asso2.getLogo())
                     .placeholder(R.drawable.charity)
                     .into(holder.imageButtonAsso2);
 
-            holder.textViewAsso2.setText(modelAssociationImageButtons.get(index + 1).getNomAssociation());
+            holder.textViewAsso2.setText(asso2.getNom_association());
             holder.imageButtonAsso2.setVisibility(View.VISIBLE);
             holder.textViewAsso2.setVisibility(View.VISIBLE);
             bindButton(holder.imageButtonAsso2);
@@ -87,12 +91,14 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
 
         // Item 3
         if (index + 2 < modelAssociationImageButtons.size()) {
+            Association asso3 = modelAssociationImageButtons.get(index + 2);
+
             Glide.with(context)
-                    .load(modelAssociationImageButtons.get(index + 2).getImageAssociationUrl())
+                    .load(asso3.getLogo())
                     .placeholder(R.drawable.charity)
                     .into(holder.imageButtonAsso3);
 
-            holder.textViewAsso3.setText(modelAssociationImageButtons.get(index + 2).getNomAssociation());
+            holder.textViewAsso3.setText(asso3.getNom_association());
             holder.imageButtonAsso3.setVisibility(View.VISIBLE);
             holder.textViewAsso3.setVisibility(View.VISIBLE);
             bindButton(holder.imageButtonAsso3);
@@ -101,6 +107,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso3.setVisibility(View.INVISIBLE);
         }
     }
+
 
 
     @Override

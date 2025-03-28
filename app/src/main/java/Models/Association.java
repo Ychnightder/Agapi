@@ -2,6 +2,7 @@ package Models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Association {
@@ -52,4 +53,18 @@ public class Association {
     public void setImagePresentation(List<String> imagePresentation) {
         this.imagePresentation = imagePresentation;
     }
+    public Association(String logo, String nom_association) {
+        this.logo = logo;
+        this.nom_association = nom_association;
+    }
+
+    public Association(String nom_association, String logo, String description, String firstImage) {
+        this.nom_association = nom_association;
+        this.logo = logo;
+        this.description = description;
+
+        this.imagePresentation = new ArrayList<>();
+        this.imagePresentation.add(firstImage);
+    }
+
 }
