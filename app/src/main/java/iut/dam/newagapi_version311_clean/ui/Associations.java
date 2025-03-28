@@ -18,6 +18,7 @@ public class Associations extends AppCompatActivity {
     FrameLayout frameLayout;
     ImageButton buttonFilter, buttonAssociations;
     TextView textViewAssociations;
+    private Boolean estEnList = true;
     private final int couleurOnclick = Color.parseColor("#F2409D");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +31,27 @@ public class Associations extends AppCompatActivity {
         buttonAssociations.setImageResource(R.drawable.bottomnav_charityonclick);
         textViewAssociations.setTextColor(couleurOnclick);
 
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.frameContainer, new association_list())
                 .commit();
 
         buttonFilter.setOnClickListener(v -> {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.frameContainer, new association_grid())
-                    .commit();
+            if (estEnList) {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameContainer, new association_grid())
+                        .commit();
+                estEnList = false;
+            }
+            else {
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frameContainer, new association_list())
+                        .commit();
+                estEnList = true;
+            }
         });
         BottomNavControler.setupNavigation(this);
 

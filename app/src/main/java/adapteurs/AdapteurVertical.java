@@ -14,16 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import Models.Association;
 import iut.dam.newagapi_version311_clean.R;
-import Models.ModeleVerticalscrollview;
 
 public class AdapteurVertical extends RecyclerView.Adapter<AdapteurVertical.MyViewHolder> {
 
     Context context;
-    ArrayList<ModeleVerticalscrollview> modeleDescriptionAssociations;
+    ArrayList<Association> modeleDescriptionAssociations;
 
-    public AdapteurVertical(Context context, ArrayList<ModeleVerticalscrollview> modeleDescriptionAssociations) {
+    public AdapteurVertical(Context context, ArrayList<Association> modeleDescriptionAssociations) {
         this.context = context;
         this.modeleDescriptionAssociations = modeleDescriptionAssociations;
     }
@@ -38,25 +39,30 @@ public class AdapteurVertical extends RecyclerView.Adapter<AdapteurVertical.MyVi
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ModeleVerticalscrollview item = modeleDescriptionAssociations.get(position);
+        Association item = modeleDescriptionAssociations.get(position);
 
-        holder.nomAsso.setText(item.getNomAssociation());
-        holder.descriptionAsso.setText(item.getDescriptionAsso());
+        holder.nomAsso.setText(item.getNom_association());
+        holder.descriptionAsso.setText(item.getDescription());
 
-        //transforme URL en image
-        //placeholder : si ya une erreur remplace image par image local (pour test)
         Glide.with(context)
-                .load(item.getIconeAssociationUrl())
+                .load(item.getLogo())
                 .placeholder(R.drawable.charity)
                 .into(holder.iconeAsso);
 
+        String imageUrl = null;
+        List<String> imageList = item.getImagePresentation();
+        if (imageList != null && !imageList.isEmpty()) {
+            imageUrl = imageList.get(0).trim();
+        }
+
         Glide.with(context)
-                .load(item.getImageAssociationUrl())
+                .load(imageUrl)
                 .placeholder(R.drawable.charity)
                 .into(holder.imageAsso);
-        Log.d("GLIDE_DEBUG", "Image URL: " + item.getImageAssociationUrl());
 
+        Log.d("GLIDE_DEBUG", "Image URL: " + imageUrl);
     }
+
 
     @Override
     public int getItemCount() {

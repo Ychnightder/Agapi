@@ -1,6 +1,9 @@
 package adapteurs;
 
+import static helpers.ButtonRedirection.bindButton;
+
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,24 +13,21 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
-import Models.ModeleHorizontalscrollview;
-import Models.ModeleVerticalScrollViewList;
-import helpers.Redirection;
+import Models.Association;
 import iut.dam.newagapi_version311_clean.R;
-
 
 public class AdapteurAssociationList extends RecyclerView.Adapter<AdapteurAssociationList.MyViewHolder> {
 
     Context context;
+    ArrayList<Association> modeleDescriptionAssociations;
 
-
-    ArrayList<ModeleVerticalScrollViewList> modelAssociationImageButtons;
-
-    public AdapteurAssociationList(Context context, ArrayList<ModeleVerticalScrollViewList> modelAssociationImageButtons) {
+    public AdapteurAssociationList(Context context, ArrayList<Association> modeleDescriptionAssociations) {
         this.context = context;
-        this.modelAssociationImageButtons = modelAssociationImageButtons;
+        this.modeleDescriptionAssociations = modeleDescriptionAssociations;
     }
 
     @NonNull
@@ -35,50 +35,42 @@ public class AdapteurAssociationList extends RecyclerView.Adapter<AdapteurAssoci
     public AdapteurAssociationList.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.associations_modele_list, parent, false);
-
-        RecyclerView.LayoutParams params = new RecyclerView.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        view.setLayoutParams(params);
-
         return new AdapteurAssociationList.MyViewHolder(view);
     }
 
-
-
     @Override
-        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.NomAssociationList.setText(modelAssociationImageButtons.get(position).getNom_Asso());
-        holder.iconAssociation.setImageResource(modelAssociationImageButtons.get(position).getIcon());
-        bindButton(holder.iconAssociation);
+    public void onBindViewHolder(@NonNull AdapteurAssociationList.MyViewHolder holder, int position) {
+        Association item = modeleDescriptionAssociations.get(position);
 
+        holder.NomAssociationList.setText(item.getNom_association());
+
+
+        Glide.with(context)
+                .load(item.getLogo())
+                .placeholder(R.drawable.charity)
+                .into(holder.iconAssociation);
+
+        Log.d("GLIDE_DEBUGLIST", "Image URL: " + item.getLogo());
+
+        bindButton(holder.iconAssociation,context);
     }
+
 
     @Override
     public int getItemCount() {
-        return modelAssociationImageButtons.size();
+        return modeleDescriptionAssociations.size();
     }
 
-
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         ImageButton iconAssociation;
         TextView NomAssociationList;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             iconAssociation = itemView.findViewById(R.id.iconAssociation);
             NomAssociationList = itemView.findViewById(R.id.NomAssociationList);
-
-
         }
     }
-    private void bindButton(ImageButton button) {
-            button.setOnClickListener(v -> Redirection.clickEvent(context));
-    }
+
 
 }
-
-
-
-
