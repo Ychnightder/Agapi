@@ -86,12 +86,13 @@
 
 
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imageView2"
         android:layout_width="64dp"
         android:layout_height="64dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/transparent"
         app:srcCompat="@mipmap/page_associations_heart" />
 
     <include

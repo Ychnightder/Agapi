@@ -26,6 +26,7 @@ import Models.Association;
 import Models.AssociationRepository;
 import adapteurs.AdapteurHorizontal;
 import adapteurs.AdapteurVertical;
+import fragments.AccueilFragment2Button;
 import helpers.BottomNavControler;
 import iut.dam.newagapi_version311_clean.R;
 
@@ -38,8 +39,8 @@ public class Accueil extends AppCompatActivity {
     AdapteurVertical adapteurVertical;
     ViewStub stub;
     ConstraintLayout rootLayout;
-    ImageButton buttonProfil, buttonAcceuil, buttonAsso;
-    TextView textViewProfil, textViewAsso, textViewAcceuil;
+    ImageButton buttonProfil, buttonAcceuil;
+    TextView textViewAcceuil;
     Button buttonPourvous, buttonSuivies;
     View viewPourvous, viewSuivies;
 
@@ -71,79 +72,30 @@ public class Accueil extends AppCompatActivity {
         textViewAcceuil.setTextColor(couleurOnclick);
 
         setrecycleviews();
-        preferences = getSharedPreferences("Login", MODE_PRIVATE);
-        preferences.edit().clear().apply();
-
+        SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
+        editor.clear();
+        editor.putBoolean("Login", true);
+        editor.apply();
 
 
     }
     @Override
     protected void onResume() {
         super.onResume();
-        boolean connecter = preferences.getBoolean("Connecter", false);
+        SharedPreferences preferences = getSharedPreferences("Login", MODE_PRIVATE);
+        boolean connecter = preferences.getBoolean("Login", false);
+        Log.d("DEBUG booealn", "Connecter vaut: " + connecter);
+
         ViewGroup loginButtonsContainer = findViewById(R.id.view3);
         rootLayout = findViewById(R.id.main);
 
-
-        if (connecter && buttonPourvous != null) {
-
+        if (connecter) {
             loginButtonsContainer.setVisibility(View.VISIBLE);
-
-            buttonPourvous = findViewById(R.id.buttonPourVous);
-            buttonSuivies = findViewById(R.id.buttonSuivies);
-            viewPourvous = findViewById(R.id.barButton_Pourvous);
-            viewSuivies = findViewById(R.id.barButton_Suivis);
-
-            ConstraintSet constraintSet = new ConstraintSet();
-            constraintSet.clone(rootLayout);
-            constraintSet.connect(
-                    R.id.section_association,
-                    ConstraintSet.TOP,
-                    R.id.buttonText,
-                    ConstraintSet.BOTTOM
-            );
-            constraintSet.applyTo(rootLayout);
-
-            buttonPourvous.setOnClickListener(v -> {
-                viewPourvous.setVisibility(View.VISIBLE);
-                viewSuivies.setVisibility(View.GONE);
-            });
-
-            buttonSuivies.setOnClickListener(v -> {
-                viewPourvous.setVisibility(View.GONE);
-                viewSuivies.setVisibility(View.VISIBLE);
-            });
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.view3, new AccueilFragment2Button())
+                    .commit();
         }
-//        else if (deconnecter){
-//            loginButtonsContainer.setVisibility(View.GONE);
-//
-//            ConstraintSet constraintSet = new ConstraintSet();
-//            constraintSet.clone(rootLayout);
-//            constraintSet.connect(
-//                    R.id.section_association,
-//                    ConstraintSet.TOP,
-//                    R.id.header,
-//                    ConstraintSet.BOTTOM
-//            );
-//            constraintSet.applyTo(rootLayout);
-//        }
-//  methode future pour deconnecter
-
-
-
-        View.OnClickListener buttonClickListener = v -> {
-            if (v.getId() == R.id.buttonPourVous) {
-                viewSuivies.setVisibility(View.GONE);
-                viewPourvous.setVisibility(View.VISIBLE);
-            } else if (v.getId() == R.id.buttonSuivies) {
-                viewSuivies.setVisibility(View.VISIBLE);
-                viewPourvous.setVisibility(View.GONE);
-            }
-        };
-
-
-
     }
     private void setrecycleviews() {
         new Thread(() -> {
