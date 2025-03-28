@@ -10,7 +10,8 @@
         android:id="@+id/Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/association_icon"
         android:scaleType="centerCrop"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +25,8 @@
         android:text="TextView"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/Icon"
-        app:layout_constraintTop_toBottomOf="@+id/Icon" />
+        app:layout_constraintTop_toBottomOf="@+id/Icon"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/NomAsso"
@@ -34,15 +36,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/Icon"
         app:layout_constraintStart_toEndOf="@+id/Icon"
         app:layout_constraintTop_toTopOf="@+id/Icon"
-        android:layout_marginLeft="10dp"
-        />
+        android:layout_marginStart="10dp"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/ImageAsso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="200dp"
         android:layout_marginTop="44dp"
+        android:contentDescription="@string/image"
+        android:minHeight="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Description"

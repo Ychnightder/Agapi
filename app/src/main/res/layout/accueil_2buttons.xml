@@ -9,28 +9,27 @@
     <LinearLayout
         android:id="@+id/sectionPourVous"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toStartOf="@id/sectionSuivies"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5"
-        >
+        app:layout_constraintWidth_percent="0.5">
 
         <Button
             android:id="@+id/buttonPourVous"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:text="@string/pour_vous"
-            android:textSize="20dp"
-            android:textColor="@color/text_svg_main_color" />
+            android:textColor="@color/text_svg_main_color"
+            android:textSize="20sp" />
 
         <View
             android:id="@+id/barButton_Pourvous"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="3dp"
             android:background="@color/bar_button"
             android:visibility="visible" />
     </LinearLayout>
@@ -39,7 +38,7 @@
     <LinearLayout
         android:id="@+id/sectionSuivies"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,17 +48,17 @@
 
         <Button
             android:id="@+id/buttonSuivies"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:text="@string/suivi_e_s"
-            android:textColor="@color/text_svg_main_color" />
+            android:textColor="@color/text_svg_main_color"
+            android:textSize="20sp" />
 
         <View
             android:id="@+id/barButton_Suivis"
             android:layout_width="match_parent"
-            android:layout_height="5dp"
+            android:layout_height="3dp"
             android:background="@color/bar_button"
             android:visibility="invisible" />
     </LinearLayout>

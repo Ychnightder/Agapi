@@ -12,8 +12,7 @@
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
         android:text="@string/app_name"
-        android:textColor="@color/white"
+        android:textColor="@color/text_svg_main_color"
         android:textSize="38sp"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
