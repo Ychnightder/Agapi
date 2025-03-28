@@ -16,8 +16,10 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import Models.Association;
-import helpers.Redirection;
+
+import helpers.ButtonRedirection;
 import iut.dam.newagapi_version311_clean.R;
+import static helpers.ButtonRedirection.bindButton;
 
 
 public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssociationGrid.MyViewHolder> {
@@ -65,7 +67,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso1.setText(asso1.getNom_association());
             holder.imageButtonAsso1.setVisibility(View.VISIBLE);
             holder.textViewAsso1.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso1);
+            bindButton(holder.imageButtonAsso1,context);
         } else {
             holder.imageButtonAsso1.setVisibility(View.GONE);
             holder.textViewAsso1.setVisibility(View.GONE);
@@ -83,7 +85,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso2.setText(asso2.getNom_association());
             holder.imageButtonAsso2.setVisibility(View.VISIBLE);
             holder.textViewAsso2.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso2);
+            bindButton(holder.imageButtonAsso2,context);
         } else {
             holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
             holder.textViewAsso2.setVisibility(View.INVISIBLE);
@@ -101,7 +103,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso3.setText(asso3.getNom_association());
             holder.imageButtonAsso3.setVisibility(View.VISIBLE);
             holder.textViewAsso3.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso3);
+            bindButton(holder.imageButtonAsso3,context);
         } else {
             holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
             holder.textViewAsso3.setVisibility(View.INVISIBLE);
@@ -130,9 +132,6 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             textViewAsso3 = itemView.findViewById(R.id.textViewAsso3);
 
         }
-    }
-    private void bindButton(ImageButton button) {
-            button.setOnClickListener(v -> Redirection.clickEvent(context));
     }
 
 }

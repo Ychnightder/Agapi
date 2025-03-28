@@ -1,5 +1,7 @@
 package adapteurs;
 
+import static helpers.ButtonRedirection.bindButton;
+
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +18,6 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import Models.Association;
-import helpers.Redirection;
 import iut.dam.newagapi_version311_clean.R;
 
 public class AdapteurAssociationList extends RecyclerView.Adapter<AdapteurAssociationList.MyViewHolder> {
@@ -51,7 +52,7 @@ public class AdapteurAssociationList extends RecyclerView.Adapter<AdapteurAssoci
 
         Log.d("GLIDE_DEBUGLIST", "Image URL: " + item.getLogo());
 
-        bindButton(holder.iconAssociation);
+        bindButton(holder.iconAssociation,context);
     }
 
 
@@ -71,7 +72,5 @@ public class AdapteurAssociationList extends RecyclerView.Adapter<AdapteurAssoci
         }
     }
 
-    private void bindButton(ImageButton button) {
-        button.setOnClickListener(v -> Redirection.clickEvent(context));
-    }
+
 }
