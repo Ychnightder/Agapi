@@ -161,7 +161,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ou">
+        app:layout_constraintTop_toBottomOf="@id/ou"
+        tools:ignore="UseCompoundDrawables">
         <ImageView
             android:id="@+id/icon_google"
             android:layout_width="50dp"

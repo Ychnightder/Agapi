@@ -14,7 +14,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="@drawable/associations_round_icon"
-        android:clipToOutline="true"
+        android:contentDescription="@string/association_icon"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="25dp"
         android:textSize="20sp"
-        />
+        tools:ignore="HardcodedText" />
 
     <View
         android:id="@+id/barListAssociation"

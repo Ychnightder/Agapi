@@ -52,5 +52,24 @@
     <string name="inscription">Inscription</string>
     <string name="pour_vous">Pour vous</string>
     <string name="suivi_e_s">Suivi(e)s</string>
+    <string name="association_suivie">Association suivie</string>
+    <string name="total_des_dons">Total des dons</string>
+    <string name="_00_00">00.00€</string>
+    <string name="don_par_association">Don par association</string>
+    <string name="nom_asso_00_00">Nom asso : 00.00€</string>
+    <string name="association_recommandee">Association recommandee</string>
+    <string name="choisissez_le_montant">Choisissez le montant:</string>
+    <string name="montant_libre">Montant Libre</string>
+    <string name="total_du_don">Total du don</string>
+    <string name="don_pour_nom_association">Don pour Nom association</string>
+    <string name="je_valide_mon_don">Je valide mon don</string>
+    <string name="bonjour">Bonjour</string>
+    <string name="mon_profil">Mon profil</string>
+    <string name="mon_association">Mon association</string>
+    <string name="ic_ne_coeur">Icône coeur</string>
+    <string name="faire_un_don">Faire un don</string>
+    <string name="galerie">Galerie</string>
+    <string name="nom_asso">Nom Asso</string>
+    <string name="image">image</string>
     <!-- fin de la partie test -->
 </resources>

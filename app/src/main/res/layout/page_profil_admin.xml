@@ -28,91 +28,80 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bonjour"
-        android:textSize="30dp"
+        android:text="@string/bonjour"
+        android:textSize="30sp"
         android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/PP"
         app:layout_constraintStart_toEndOf="@+id/PP"
         app:layout_constraintTop_toTopOf="@+id/PP" />
 
-    <TableLayout
+    <LinearLayout
+        android:id="@+id/deuxButton"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:stretchColumns="0,1"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
         android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        android:id="@+id/deuxButton"
-        >
+        app:layout_constraintTop_toBottomOf="@id/header">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_profil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@android:color/white">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/tab_profil"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="@android:color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mon_profil"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mon profil"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/underline_profil"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:id="@+id/underline_profil"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <View
-                    android:id="@+id/underline_profil"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tab_association"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@android:color/white">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/tab_association"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:background="@android:color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mon_association"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mon association"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+            <View
+                android:id="@+id/underline_association"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@android:color/black"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
-                    />
-                <View
-                    android:id="@+id/underline_association"
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="@android:color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:visibility="invisible"
-                    />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </TableRow>
-    </TableLayout>
     <FrameLayout
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
