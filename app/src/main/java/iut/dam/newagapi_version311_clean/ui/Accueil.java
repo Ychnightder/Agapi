@@ -74,9 +74,8 @@ public class Accueil extends AppCompatActivity {
         setrecycleviews();
         SharedPreferences.Editor editor = getSharedPreferences("Login", MODE_PRIVATE).edit();
         editor.clear();
-        editor.putBoolean("Login", true);
+        editor.putBoolean("Login", false);
         editor.apply();
-
 
     }
     @Override
@@ -161,9 +160,5 @@ public class Accueil extends AppCompatActivity {
             }
         }).start();
     }
-
-
-
-
 
 }

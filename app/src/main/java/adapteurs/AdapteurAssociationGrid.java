@@ -33,7 +33,6 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
         this.context = context;
         this.modelAssociationImageButtons = modelAssociationImageButtons;
     }
-
     @NonNull
     @Override
     public AdapteurAssociationGrid.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

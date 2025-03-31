@@ -133,7 +133,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/nom_asso_00_00"
+        android:text=":00.00"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/NomAssoPageDon"
+        app:layout_constraintTop_toTopOf="@+id/NomAssoPageDon"
+        app:layout_constraintBottom_toBottomOf="@id/NomAssoPageDon"
+        />
+    <TextView
+        android:id="@+id/NomAssoPageDon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Nom asso"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="@+id/titleTotalDuDon"
         app:layout_constraintTop_toBottomOf="@+id/titleTotalDuDon" />
@@ -142,10 +153,10 @@
         android:id="@+id/donPourAsso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="@string/don_pour_nom_association"
         android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/montantTotalDon"
+        app:layout_constraintStart_toStartOf="@+id/NomAssoPageDon"
         app:layout_constraintTop_toBottomOf="@+id/montantTotalDon" />
 
     <View
