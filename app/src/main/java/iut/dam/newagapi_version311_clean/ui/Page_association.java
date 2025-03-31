@@ -23,7 +23,7 @@ public class Page_association extends AppCompatActivity {
 
     Button buttonDon;
     TextView nomAsso, description;
-    ImageView logo;
+    private String nomAssociation;
     RecyclerView galerieRecyclerView;
 
     @Override
@@ -48,8 +48,8 @@ public class Page_association extends AppCompatActivity {
                     finish();
                     return;
                 }
-//whut
-                nomAsso.setText(asso.getNom_association());
+                nomAssociation = asso.getNom_association();
+                nomAsso.setText(nomAssociation);
                 description.setText(asso.getDescription());
 
                 List<String> imageUrls = asso.getImagePresentation();
@@ -60,8 +60,8 @@ public class Page_association extends AppCompatActivity {
 
         buttonDon.setOnClickListener(v -> {
             Intent intent = new Intent(this, Page_Don.class);
+            intent.putExtra("nom_association", nomAssociation);
             startActivity(intent);
-            finish();
         });
 
         FooterAuthentification.retournPage(this);

@@ -82,7 +82,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso2.setText(asso2.getNom_association());
             holder.imageButtonAsso2.setVisibility(View.VISIBLE);
             holder.textViewAsso2.setVisibility(View.VISIBLE);
-            bindImageButton(holder.imageButtonAsso1, context, asso2);
+            bindImageButton(holder.imageButtonAsso2, context, asso2);
 
         } else {
             holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
@@ -101,7 +101,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso3.setText(asso3.getNom_association());
             holder.imageButtonAsso3.setVisibility(View.VISIBLE);
             holder.textViewAsso3.setVisibility(View.VISIBLE);
-            bindImageButton(holder.imageButtonAsso1, context, asso3);
+            bindImageButton(holder.imageButtonAsso3, context, asso3);
         } else {
             holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
             holder.textViewAsso3.setVisibility(View.INVISIBLE);

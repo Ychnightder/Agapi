@@ -23,10 +23,12 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
+
 import iut.dam.newagapi_version311_clean.R;
 import iut.dam.newagapi_version311_clean.ui.Accueil;
 import iut.dam.newagapi_version311_clean.ui.Login_Inscription;
 import iut.dam.newagapi_version311_clean.ui.Profil;
+import iut.dam.newagapi_version311_clean.ui.Splash;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -64,7 +66,6 @@ public class LoginFragment extends Fragment {
 
 
     }
-
     private void loginUser() {
         String email = emailEditTextEmail.getText().toString();
         String motDePasse = motDePasseEditTextEmail.getText().toString();
@@ -92,7 +93,6 @@ public class LoginFragment extends Fragment {
                     }
                 });
             }
-//
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -115,6 +115,8 @@ public class LoginFragment extends Fragment {
                                 Log.d("DEBUG_LOGIN", "Login success: " + success);
 
                                 if (success) {
+                                    Intent intent = new Intent(context, Profil.class);
+                                    startActivity(intent);
                                     editor.putBoolean("isLoggedIn", true);
                                     editor.apply();
                                     Log.d("DEBUG_LOGIN", "Set isLoggedIn to TRUE");
