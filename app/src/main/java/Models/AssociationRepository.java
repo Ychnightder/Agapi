@@ -65,4 +65,24 @@ public class AssociationRepository {
             return null;
         }
     }
+    public Association getAssociationByNom(String nom) {
+        if (nom == null) {
+            Log.e("DEBUG_ERROR", "Le nom reçu est null !");
+            return null;
+        }
+
+        List<Association> all = getAssociationsFromApi();
+        if (all != null) {
+            for (Association a : all) {
+                if (a.getNom_association() != null &&
+                        a.getNom_association().trim().equalsIgnoreCase(nom.trim())) {
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
+
+
+
 }

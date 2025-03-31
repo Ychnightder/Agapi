@@ -1,10 +1,12 @@
 package iut.dam.newagapi_version311_clean.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +20,9 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
+        SharedPreferences sharedPref = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        sharedPref.edit().clear().apply();
+
 
         Uri data = getIntent().getData();
         final String associationId = (data != null && "donsante".equals(data.getScheme()))
@@ -29,6 +34,7 @@ public class Splash extends AppCompatActivity {
             if (associationId != null) {
                 intent = new Intent(Splash.this, Page_Don.class);
                 intent.putExtra("associationId", associationId);
+                //met le id en parametre
             } else {
                 intent = new Intent(Splash.this, Accueil.class);
             }

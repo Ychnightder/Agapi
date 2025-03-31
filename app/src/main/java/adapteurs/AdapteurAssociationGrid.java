@@ -1,6 +1,5 @@
 package adapteurs;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +16,8 @@ import java.util.ArrayList;
 
 import Models.Association;
 
-import helpers.ButtonRedirection;
 import iut.dam.newagapi_version311_clean.R;
-import static helpers.ButtonRedirection.bindButton;
+import static helpers.ButtonRedirection.bindImageButton;
 
 
 public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssociationGrid.MyViewHolder> {
@@ -66,7 +64,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso1.setText(asso1.getNom_association());
             holder.imageButtonAsso1.setVisibility(View.VISIBLE);
             holder.textViewAsso1.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso1,context);
+            bindImageButton(holder.imageButtonAsso1, context, asso1);
         } else {
             holder.imageButtonAsso1.setVisibility(View.GONE);
             holder.textViewAsso1.setVisibility(View.GONE);
@@ -84,7 +82,8 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso2.setText(asso2.getNom_association());
             holder.imageButtonAsso2.setVisibility(View.VISIBLE);
             holder.textViewAsso2.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso2,context);
+            bindImageButton(holder.imageButtonAsso1, context, asso2);
+
         } else {
             holder.imageButtonAsso2.setVisibility(View.INVISIBLE);
             holder.textViewAsso2.setVisibility(View.INVISIBLE);
@@ -102,7 +101,7 @@ public class AdapteurAssociationGrid extends RecyclerView.Adapter<AdapteurAssoci
             holder.textViewAsso3.setText(asso3.getNom_association());
             holder.imageButtonAsso3.setVisibility(View.VISIBLE);
             holder.textViewAsso3.setVisibility(View.VISIBLE);
-            bindButton(holder.imageButtonAsso3,context);
+            bindImageButton(holder.imageButtonAsso1, context, asso3);
         } else {
             holder.imageButtonAsso3.setVisibility(View.INVISIBLE);
             holder.textViewAsso3.setVisibility(View.INVISIBLE);

@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,6 +61,8 @@ public class LoginFragment extends Fragment {
             }
         });
         return view;
+
+
     }
 
     private void loginUser() {
@@ -89,6 +92,7 @@ public class LoginFragment extends Fragment {
                     }
                 });
             }
+//
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
@@ -102,16 +106,24 @@ public class LoginFragment extends Fragment {
                         requireActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
+
                                 Context context = getActivity();
                                 Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+
+                                SharedPreferences sharedPref = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                Log.d("DEBUG_LOGIN", "Login success: " + success);
+
                                 if (success) {
-                                    SharedPreferences sharedPref = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPref.edit();
                                     editor.putBoolean("isLoggedIn", true);
                                     editor.apply();
-                                    Intent intent = new Intent(context, Profil.class);
-                                    startActivity(intent);
+                                    Log.d("DEBUG_LOGIN", "Set isLoggedIn to TRUE");
+                                } else {
+                                    editor.putBoolean("isLoggedIn", false);
+                                    editor.apply();
+                                    Log.d("DEBUG_LOGIN", "Set isLoggedIn to FALSE");
                                 }
+
                             }
                         });
                     } catch (Exception e) {

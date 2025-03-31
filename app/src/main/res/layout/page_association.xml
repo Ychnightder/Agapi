@@ -27,17 +27,28 @@
         android:layout_marginTop="16dp" />
 
 
-    <TextView
-        android:id="@+id/Description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxHeight="100dp"
-        android:text="@string/test_description"
+    <ScrollView
+        android:id="@+id/scrollDescription"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_max="150dp"
+        android:layout_margin="8dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toBottomOf="@id/NomAssociation"
-        android:textStyle="bold"
-        android:padding="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginStart="10dp"
+        >
+
+        <TextView
+            android:id="@+id/Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_description"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:padding="8dp" />
+    </ScrollView>
+
 
 
     <TextView
@@ -48,7 +59,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="5dp"
-        app:layout_constraintTop_toBottomOf="@id/Description"
+        app:layout_constraintTop_toBottomOf="@id/scrollDescription"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
 

@@ -28,7 +28,7 @@ public class Page_Don extends AppCompatActivity {
 
         Intent intent = getIntent();
         String associationIdStr = intent.getStringExtra("associationId");
-
+        //ici recupere le id par qr code vient du parametre
         if (associationIdStr != null) {
             int associationId = Integer.parseInt(associationIdStr);
             new LoadAssociationTask().execute(associationId);
@@ -46,6 +46,7 @@ public class Page_Don extends AppCompatActivity {
                 for (Association asso : associations) {
                     if (asso.getId_association() == ids[0]) {
                         return asso;
+                        //cherche id correspond
                     }
                 }
             }
@@ -56,6 +57,7 @@ public class Page_Don extends AppCompatActivity {
         protected void onPostExecute(Association association) {
             if (association != null) {
                 associationName.setText(association.getNom_association());
+                //remplace le text default par le nom
             } else {
                 associationName.setText("Association introuvable");
             }

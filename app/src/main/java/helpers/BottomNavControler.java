@@ -2,6 +2,7 @@ package helpers;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -48,10 +49,31 @@ public class BottomNavControler {
         });
 
         buttonProfil.setOnClickListener(v -> {
-            if (activity.getClass() != Login_Inscription.class || activity.getClass() != Profil.class || activity.getClass() != Profil_Admin.class) {
-                activity.startActivity(new Intent(activity, Login_Inscription.class));
-                activity.overridePendingTransition(0, 0);
+            boolean isLoggedIn = activity.getSharedPreferences("MyAppPrefs", Activity.MODE_PRIVATE)
+                    .getBoolean("isLoggedIn", false);
+            Log.d("DEBUG_LOGIN", "isLoggedIn: " + isLoggedIn);
+
+
+            Class<?> currentClass = activity.getClass();
+
+            if (!isLoggedIn) {
+                if (currentClass != Login_Inscription.class) {
+                    activity.startActivity(new Intent(activity, Login_Inscription.class));
+                    activity.overridePendingTransition(0, 0);
+                }
+            } else {
+                boolean isAdmin = activity.getSharedPreferences("MyAppPrefs", Activity.MODE_PRIVATE)
+                        .getBoolean("isAdmin", false);
+                Log.d("DEBUG_LOGIN", "isAdmin: " + isAdmin);
+                if (isAdmin && currentClass != Profil_Admin.class) {
+                    activity.startActivity(new Intent(activity, Profil_Admin.class));
+                    activity.overridePendingTransition(0, 0);
+                } else if (!isAdmin && currentClass != Profil.class) {
+                    activity.startActivity(new Intent(activity, Profil.class));
+                    activity.overridePendingTransition(0, 0);
+                }
             }
         });
+
     }
 }

@@ -1,5 +1,6 @@
 package fragments;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -137,9 +138,14 @@ public class InscriptionFragment extends Fragment {
 
         // Vérification du mot de passe
         if (!isValidPassword(motDePasse)) {
-            Toast.makeText(context, "Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule, un caractère spécial, et faire au moins 8 caractères", Toast.LENGTH_SHORT).show();
+            new AlertDialog.Builder(context)
+                    .setTitle("Mot de passe invalide")
+                    .setMessage("Le mot de passe doit contenir au moins un chiffre, une lettre majuscule, une lettre minuscule, un caractère spécial, et faire au moins 8 caractères.")
+                    .setPositiveButton("OK", null)
+                    .show();
             return false;
         }
+
         return true;
     }
     private boolean isValidEmail(String email) {
@@ -147,7 +153,7 @@ public class InscriptionFragment extends Fragment {
     }
     private boolean isValidPassword(String password) {
         Pattern PASSWORD_PATTERN =
-                Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
+                Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$");
         return PASSWORD_PATTERN.matcher(password).matches();
     }
 }
